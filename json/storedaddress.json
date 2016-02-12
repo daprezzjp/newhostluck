@@ -1,0 +1,18 @@
+{"addresses":[
+  { "street": "9784 Magnolia Drive",
+    "city": "Kearny",
+    "zip": "92126"
+  },
+  { "street": "4544 Wood Street",
+    "city": "Corpus Christi",
+    "zip": "92058"
+  },
+  { "street": "8032 Park Avenue",
+    "city": "Austin",
+    "zip": "09123"
+  },
+  { "street": "813 Jackson Avenue",
+    "city": "Billings",
+    "zip": "65392"
+  }
+]}

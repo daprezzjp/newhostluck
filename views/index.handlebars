@@ -6,7 +6,6 @@
 	</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-	<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -49,7 +48,7 @@
 				<input type="text" name="pw" id="pw" placeholder="Password">
 			</form>
 			<!-- <input type="submit" value="Submit"> -->
-						<a href="#home" class="ui-btn ui-corner-all">Submit</a>
+			<a href="#home" class="ui-btn ui-corner-all">Submit</a>
 		</div>
 
 		<div data-role="footer" data-position="fixed">
@@ -75,7 +74,7 @@
 				<input type="text" name="lname" id="lname" placeholder="Password">
 			</form>
 			<!-- <input type="submit" id="mySubmit" value="Submit"> -->
-						<a href="#home" class="ui-btn ui-corner-all">Submit</a>
+			<a href="#home" class="ui-btn ui-corner-all">Submit</a>
 		</div>
 
 		<div data-role="footer" data-position="fixed">
@@ -116,14 +115,14 @@
 			<h1>Host an Event!</h1>
 			<form method="post" action="demoform.asp">
 				<label for="eventname" class="ui-hidden-accessible">Name Your Event</label>
-				<input type="text" name="fname" id="fname" placeholder="Name Your Event">
+				<input type="text" name="fname" id="fname" placeholder="Name Your Event (Ex. Hostluck's Night In)">
 				<label for="date" class="ui-hidden-accessible">mm/dd/yy</label>
-				<input type="text" name="date" id="date" placeholder="mm/dd/yy">
+				<input type="text" name="date" id="date" placeholder="mm/dd/yy (Ex. 03/24/16)">
 				<label for="time" class="ui-hidden-accessible">Time of Event (Ex. 8pm)</label>
 				<input type="text" name="time" id="time" placeholder="Time of Event (Ex. 8pm)">
 			</form>
 			<!-- <input type="submit" value="Submit"> -->
-			<a href="#pickmeal" class="ui-btn ui-corner-all">Submit</a>
+			<a href="#pickmealhost" class="ui-btn ui-corner-all">Submit</a>
 		</div>
 
 		<div data-role="footer" data-position="fixed">
@@ -131,7 +130,7 @@
 		</div>
 	</div>
 	<!---PickMeal Page--------------------------------------->
-	<div data-role="page" id="pickmeal">
+	<div data-role="page" id="pickmealhost">
 		<div data-role="header">
 			<h1>HostLuck</h1>
 			<div data-role="navbar">
@@ -145,11 +144,42 @@
 		<div data-role="main" class="ui-content">
 			<h1>Pick Your Meal!</h1>
 			<ul data-role="listview">
-				{{#each projects}}
+				{{#each foods}}
 				<li>
 					<a href="#hostaddress">
-						<img src={{image}} alt="images" class="img">
-						<h2>{{name}}</h2>
+						<img src={{image1}} alt="images" class="img">
+						<h2>{{name1}}</h2>
+					</a>
+				</li>
+			 {{/each}}
+			</ul>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---ChooseMeal Page--------------------------------------->
+	<div data-role="page" id="choosemealguest">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<h1>Choose the Meal you want to join!</h1>
+			<ul data-role="listview">
+				{{#each foods}}
+				<li>
+					<a href="#attending">
+						<img src={{image1}} alt="images" class="img">
+						<h2>{{name1}}</h2>
+						<h3>{{zip1}}</h3>
 					</a>
 				</li>
 				{{/each}}
@@ -175,13 +205,23 @@
 		<div data-role="main" class="ui-content">
 			<h1>What's the Address?</h1>
 			<form method="post" action="demoform.asp">
-				<label for="eventname" class="ui-hidden-accessible">Street</label>
+				<label for="eventname" class="ui-hidden-accessible">Street (Ex. 123 Gilman Dr)</label>
 				<input type="text" name="fname" id="fname" placeholder="Street Address (Ex. 123 Gilman Dr)">
-				<label for="date" class="ui-hidden-accessible">City</label>
+				<label for="date" class="ui-hidden-accessible">City (Ex. San Diego)</label>
 				<input type="text" name="date" id="date" placeholder="City (Ex. San Diego)">
-				<label for="time" class="ui-hidden-accessible">Zip Code</label>
+				<label for="time" class="ui-hidden-accessible">Zip Code (Ex. 90210)</label>
 				<input type="text" name="time" id="time" placeholder="Zip Code (Ex. 90210)">
 			</form>
+			<!-- <h3> OR </h3>
+			<div data-role="collapsible">
+				<h3>Previous Addresses:</h3>
+				<ul data-role="listview">
+					{{#each addresses}}
+					<li><a href="#eventsetup">{{street}}, {{city}} {{zip}}</a></li>
+					{{/each}}
+				</ul>
+			</div> -->
+
 			<!-- <input type="submit" value="Submit"> -->
 			<a href="#eventsetup" class="ui-btn ui-corner-all">Submit</a>
 		</div>
@@ -393,7 +433,7 @@
 				<input type="text" name="zcode" id="zcode" placeholder="Zip Code">
 			</form>
 			<!-- <input type="submit" value="Submit"> -->
-						<a href="#pickmeal" class="ui-btn ui-corner-all">Submit</a>
+			<a href="#choosemealguest" class="ui-btn ui-corner-all">Submit</a>
 		</div>
 
 		<div data-role="footer" data-position="fixed">
@@ -497,15 +537,38 @@
 
 	<div data-role="main" class="ui-content ui-corner-all">
 		<h1> Yay! Your Event has been set up! Congrats! </h1>
+
+		<a href="#myeventsmain" class="ui-btn ui-corner-all">My Events</a>
 	</div>
 
 	<div data-role="footer" data-position="fixed">
 		<h3>Shmerling, Nguyen, Holeman & Co.</h3>
 	</div>
 </div>
+<!---EventSetup Page--------------------------------------->
+<div data-role="page" id="attending">
+	<div data-role="header">
+		<h1>HostLuck</h1>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+				<li><a href="#home" data-icon="home"></a></li>
+			</ul>
+		</div>
+	</div>
 
+	<div data-role="main" class="ui-content ui-corner-all">
+		<h1> Your Attending an Event! Yay! </h1>
+
+		<a href="#myeventsmain" class="ui-btn ui-corner-all">My Events</a>
+	</div>
+
+	<div data-role="footer" data-position="fixed">
+		<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+	</div>
+</div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<script src="style.js"></script>
 </body>
 </html>
