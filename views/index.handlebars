@@ -1,47 +1,511 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
 <head>
-	<title>HCI Project Portfolio</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="/css/introHCI.css" rel="stylesheet">
-	<!-- this is a comment in HTML -->
+	<title>
+		Hostluck - The Crowd Sourced Dinner
+	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="style.css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body>
-	<div class="container">
-		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-		<!-- p means paragraph -->
-		<div class="jumbotron">
-			<h1>Michael Bernstein</h1>
-			<p>human-computer interaction &middot; social computing &middot; crowdsourcing</p>
+	<!---Splash Page------------------------------------------>
+	<div data-role="page" id="splash">
+		<div data-role="header">
+			<h1>HostLuck</h1>
 		</div>
 
+		<div data-role="main" class="ui-content">
+			<a href="#login" class="ui-btn ui-corner-all">Log In</a>
+			<a href="#signup" class="ui-btn ui-corner-all">Sign Up</a>
+		</div>
 
-		<h4>Projects</h4>
-		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
-		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
-		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
-		{{#each projects}}
-      <div class="project" id="{{id}}">
-        <a href="project/{{name}}" class="thumbnail">
-          <img src="images/{{image}}" ... />
-          <p>{{name}}</p>
-        </a>
-      </div>
-    {{/each}}
+		<div data-role="footer" data-position="fixed">
+			<h1>Shmerling, Nguyen, Holeman & Co.</h1>
+		</div>
+	</div>
+	<!---Signup Page--------------------------------------->
+	<div data-role="page" id="signup">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+		</div>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#" data-rel="back" data-icon="arrow-l"></a></li>
+			</ul>
+		</div>
 
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
+		<div data-role="main" class="ui-content">
+			<form method="post" action="demoform.asp">
+				<label for="fname" class="ui-hidden-accessible">Firstname</label>
+				<input type="text" name="fname" id="fname" placeholder="First Name">
+				<label for="lname" class="ui-hidden-accessible">Lastname</label>
+				<input type="text" name="lname" id="lname" placeholder="Last Name">
+				<label for="fname" class="ui-hidden-accessible">Email</label>
+				<input type="text" name="uname" id="uname" placeholder="Email">
+				<label for="lname" class="ui-hidden-accessible">Password</label>
+				<input type="text" name="pw" id="pw" placeholder="Password">
+			</form>
+			<!-- <input type="submit" value="Submit"> -->
+						<a href="#home" class="ui-btn ui-corner-all">Submit</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---Login Page--------------------------------------->
+	<div data-role="page" id="login">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" data-rel="back" data-icon="arrow-l"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<form method="post" action="demoform.asp">
+				<label for="username" class="ui-hidden-accessible">Email</label>
+				<input type="text" name="fname" id="fname" placeholder="Email">
+				<label for="password" class="ui-hidden-accessible">Password</label>
+				<input type="text" name="lname" id="lname" placeholder="Password">
+			</form>
+			<!-- <input type="submit" id="mySubmit" value="Submit"> -->
+						<a href="#home" class="ui-btn ui-corner-all">Submit</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---Home Page--------------------------------------->
+	<div data-role="page" id="home">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<a href="#hostmain" class="ui-btn ui-corner-all">Host</a>
+			<a href="#findevent" class="ui-btn ui-corner-all">Guest</a>
+			<a href="#myeventsmain" class="ui-btn ui-corner-all">My Events</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---HostMain Page--------------------------------------->
+	<div data-role="page" id="hostmain">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<h1>Host an Event!</h1>
+			<form method="post" action="demoform.asp">
+				<label for="eventname" class="ui-hidden-accessible">Name Your Event</label>
+				<input type="text" name="fname" id="fname" placeholder="Name Your Event">
+				<label for="date" class="ui-hidden-accessible">mm/dd/yy</label>
+				<input type="text" name="date" id="date" placeholder="mm/dd/yy">
+				<label for="time" class="ui-hidden-accessible">Time of Event (Ex. 8pm)</label>
+				<input type="text" name="time" id="time" placeholder="Time of Event (Ex. 8pm)">
+			</form>
+			<!-- <input type="submit" value="Submit"> -->
+			<a href="#pickmeal" class="ui-btn ui-corner-all">Submit</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---PickMeal Page--------------------------------------->
+	<div data-role="page" id="pickmeal">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<h1>Pick Your Meal!</h1>
+			<ul data-role="listview">
+				{{#each projects}}
+				<li>
+					<a href="#hostaddress">
+						<img src={{image}} alt="images" class="img">
+						<h2>{{name}}</h2>
+					</a>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---HostAddress Page--------------------------------------->
+	<div data-role="page" id="hostaddress">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<h1>What's the Address?</h1>
+			<form method="post" action="demoform.asp">
+				<label for="eventname" class="ui-hidden-accessible">Street</label>
+				<input type="text" name="fname" id="fname" placeholder="Street Address (Ex. 123 Gilman Dr)">
+				<label for="date" class="ui-hidden-accessible">City</label>
+				<input type="text" name="date" id="date" placeholder="City (Ex. San Diego)">
+				<label for="time" class="ui-hidden-accessible">Zip Code</label>
+				<input type="text" name="time" id="time" placeholder="Zip Code (Ex. 90210)">
+			</form>
+			<!-- <input type="submit" value="Submit"> -->
+			<a href="#eventsetup" class="ui-btn ui-corner-all">Submit</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---GuestMain Page--------------------------------------->
+	<div data-role="page" id="guestmain">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<h2>Choose Event</h2>
+			<a href="#ingredientsmain" class="ui-btn ui-corner-all">Temp Button for sidescroll of Events</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---MyEventsMain Page--------------------------------------->
+	<div data-role="page" id="myeventsmain">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<h2>Host:</h2>
+			<a href="#eventinfohost" class="ui-btn ui-corner-all">Hosting Party 1</a>
+			<a href="#eventinfohost" class="ui-btn ui-corner-all">Hosting Party 2</a>
+			<a href="#eventinfohost" class="ui-btn ui-corner-all">Hosting Party 3</a>
+
+			<h2>Guest:</h2>
+			<a href="#eventinfoguest" class="ui-btn ui-corner-all">Attending Party 1</a>
+			<a href="#eventinfoguest" class="ui-btn ui-corner-all">Attending Party 2</a>
+			<a href="#eventinfoguest" class="ui-btn ui-corner-all">Attending Party 3</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---GuestSearch Page--------------------------------------->
+	<div data-role="page" id="guestsearch">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<h2>Guests</h2>
+			<a href="#anylink" class="ui-btn ui-corner-all">Guest</a>
+			<a href="#anylink" class="ui-btn ui-corner-all">Guest</a>
+			<a href="#anylink" class="ui-btn ui-corner-all">Guest</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---EventInfoHost Page--------------------------------------->
+	<div data-role="page" id="eventinfohost">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<h2>Event Info</h2>
+			<a href="#recipe" class="ui-btn ui-corner-all">Recipe</a>
+			<a href="#cancelled" class="ui-btn ui-corner-all">Cancel Event</a>
+			<div data-role="collapsible">
+				<h1>Your Ingredients to have</h1>
+				<fieldset data-role="controlgroup">
+					<input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+					<label for="checkbox-1">Onions</label>
+					<input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
+					<label for="checkbox-2">Beans</label>
+					<input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom" />
+					<label for="checkbox-3">Corn On The Cob</label>
+				</fieldset>
+			</div>
+			<h4>Address: 123 test drive, TestingVille, CA 12345</h4>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---EventInfoGuest Page--------------------------------------->
+	<div data-role="page" id="eventinfoguest">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<h2>Event Info</h2>
+			<a href="#recipe" class="ui-btn ui-corner-all">Recipe</a>
+			<a href="#cantattend" class="ui-btn ui-corner-all">Can't Attend</a>
+			<div data-role="collapsible">
+				<h1>Your Ingredients to bring</h1>
+				<fieldset data-role="controlgroup">
+					<input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+					<label for="checkbox-1">Onions</label>
+					<input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
+					<label for="checkbox-2">Beans</label>
+					<input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom" />
+					<label for="checkbox-3">Corn On The Cob</label>
+				</fieldset>
+			</div>
+			<h4>Address: 123 test drive, TestingVille, CA 12345</h4>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---IngredientsMain Page--------------------------------------->
+	<div data-role="page" id="ingredientsmain">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content ui-corner-all">
+			<h1>Ingredients List</h1>
+			<fieldset data-role="controlgroup">
+				<input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
+				<label for="checkbox-1">Onions</label>
+				<input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
+				<label for="checkbox-2">Beans</label>
+				<input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom" />
+				<label for="checkbox-3">Corn On The Cob</label>
+				<input type="checkbox" name="checkbox-4" id="checkbox-4" class="custom" />
+				<label for="checkbox-4">Corn Husk</label>
+				<input type="checkbox" name="checkbox-5" id="checkbox-5" class="custom" />
+				<label for="checkbox-5">Canned Corn</label>
+				<input type="checkbox" name="checkbox-6" id="checkbox-6" class="custom" />
+				<label for="checkbox-6">Corn Juice</label>
+				<input type="checkbox" name="checkbox-7" id="checkbox-7" class="custom" />
+				<label for="checkbox-7">Corn on a stick</label>
+				<input type="checkbox" name="checkbox-8" id="checkbox-8" class="custom" />
+				<label for="checkbox-8">PopCorn</label>
+				<input type="checkbox" name="checkbox-9" id="checkbox-9" class="custom" />
+				<label for="checkbox-9">Corn Martini Mix</label>
+			</fieldset>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---FindEvent Page--------------------------------------->
+	<div data-role="page" id="findevent">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content ui-corner-all">
+			<h1>Find Event</h1>
+			<form method="post" action="demoform.asp">
+				<input type="range" name="points" id="points" value="50" min="0" max="100">
+			</form>
+			<h3> Miles radius of</h3>
+			<form method="post" action="demoform.asp">
+				<label for="zipcode" class="ui-hidden-accessible">Zip Code</label>
+				<input type="text" name="zcode" id="zcode" placeholder="Zip Code">
+			</form>
+			<!-- <input type="submit" value="Submit"> -->
+						<a href="#pickmeal" class="ui-btn ui-corner-all">Submit</a>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---Recipe Page--------------------------------------->
+	<div data-role="page" id="recipe">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content ui-corner-all">
+			<h2>Pot Pie</h2>
+			<div data-role="collapsible">
+				<h3>Ingredients:</h3>
+				<ul data-role="listview">
+					<li><a href="#">Store bought Pot Pie</a></li>
+					<li><a href="#">Microwave</a></li>
+					<li><a href="#">Hopes</a></li>
+					<li><a href="#">Dreams</a></li>
+					<li><a href="#">Skill</a></li>
+					<li><a href="#">Luck</a></li>
+				</ul>
+			</div>
+			<div data-role="collapsible">
+				<h3>Recipe: </h3>
+				<ol data-role="listview">
+					<li><a href="#">First Buy Pot Pie at Grocery Store</a></li>
+					<li><a href="#">Microwave</a></li>
+					<li><a href="#">Done.</a></li>
+					<li><a href="#">Eat</a></li>
+				</ol>
+			</div>
+
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+	<!---Cancelled Page--------------------------------------->
+	<div data-role="page" id="cancelled">
+		<div data-role="header">
+			<h1>HostLuck</h1>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+					<li><a href="#home" data-icon="home"></a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content ui-corner-all">
+			<h1> BOOM. Cancelled </h1>
+		</div>
+
+		<div data-role="footer" data-position="fixed">
+			<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+		</div>
+	</div>
+</body>
+</html>
+<!---Cancelled Page--------------------------------------->
+<div data-role="page" id="cantattend">
+	<div data-role="header">
+		<h1>HostLuck</h1>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+				<li><a href="#home" data-icon="home"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="main" class="ui-content ui-corner-all">
+		<h1> It's ok, see you next time! </h1>
+	</div>
+
+	<div data-role="footer" data-position="fixed">
+		<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+	</div>
+</div>
+<!---EventSetup Page--------------------------------------->
+<div data-role="page" id="eventsetup">
+	<div data-role="header">
+		<h1>HostLuck</h1>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#anylink" data-rel="back" data-icon="arrow-l"></a></li>
+				<li><a href="#home" data-icon="home"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="main" class="ui-content ui-corner-all">
+		<h1> Yay! Your Event has been set up! Congrats! </h1>
+	</div>
+
+	<div data-role="footer" data-position="fixed">
+		<h3>Shmerling, Nguyen, Holeman & Co.</h3>
+	</div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="style.js"></script>
 </body>
 </html>
