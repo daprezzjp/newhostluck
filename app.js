@@ -9,7 +9,7 @@ var path = require('path');
 var handlebars = require('express3-handlebars');
 
 var index = require('./routes/index');
-var user = requier ('./routes/user');
+var user = require ('./routes/user');
 // Example route
 // var user = require('./routes/user');
 
