@@ -1,5 +1,5 @@
-var foodhost = require("../json/foodhost.json");
+var data = require("../public/json/data.json");
 
 exports.view = function(req, res){
-  res.render('index', foodhost);
-};
+  res.render('index', data);
+ };

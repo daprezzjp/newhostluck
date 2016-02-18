@@ -12,6 +12,10 @@ function initializePage() {
 	$('.project a').click(addProjectDetails);
 }
 
+function datePicker() {
+
+	});
+}
 /*
  * Make an AJAX call to retrieve project details and add it in
  */
