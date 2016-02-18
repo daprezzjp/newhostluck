@@ -18,6 +18,54 @@
   <script src="plugins/mobiscroll/js/mobiscroll.core.js"></script>
   <script src="plugins/mobiscroll/js/mobiscroll.frame.jqm.js"></script>
   <script src="plugins/mobiscroll/js/mobiscroll.jqmwidget.js"></script>
+  <script>
+  //submit button
+    $(document).ready(function() {
+      $("#signupSubmit").click(function(e) {
+        var fname = $("#sfname").val();
+        var lname = $("#slname").val();
+        var email = $("#semail").val();
+        var password = $("#spw").val();
+        if (fname == '') {
+          e.preventDefault();
+          alert("Please Fill Firstname");
+        } else if (lname == '') {
+          e.preventDefault();
+          alert("Please Fill LastName");
+        } else if (email == '') {
+          e.preventDefault();
+          alert("Please Fill Email");
+        } else if (password == '') {
+          e.preventDefault();
+          alert("Please Fill Password");
+        }
+        else {
+          e.preventDefault();
+      window.location.href="#home";
+        }
+      });
+    });
+  </script>
+  <script>
+  //submit button
+    $(document).ready(function() {
+      $("#loginSubmit").click(function(e) {
+        var email = $("#lemail").val();
+        var password = $("#lpw").val();
+        if (email == '') {
+          e.preventDefault();
+          alert("Please Fill Email");
+        } else if (password == '') {
+          e.preventDefault();
+          alert("Please Fill Password");
+        }
+        else {
+          e.preventDefault();
+      window.location.href="#home";
+        }
+      });
+    });
+  </script>
 
 </head>
 
@@ -53,16 +101,15 @@
     <div data-role="main" class="ui-content">
       <form method="post" action="demoform.asp">
         <label for="fname" class="ui-hidden-accessible">Firstname</label>
-        <input type="text" name="fname" id="fname" placeholder="First Name">
+        <input type="text" name="fname" id="sfname" placeholder="First Name">
         <label for="lname" class="ui-hidden-accessible">Lastname</label>
-        <input type="text" name="lname" id="lname" placeholder="Last Name">
-        <label for="fname" class="ui-hidden-accessible">Email</label>
-        <input type="text" name="uname" id="uname" placeholder="Email">
-        <label for="lname" class="ui-hidden-accessible">Password</label>
-        <input type="password" name="pw" id="pw" placeholder="Password">
+        <input type="text" name="lname" id="slname" placeholder="Last Name">
+        <label for="email" class="ui-hidden-accessible">Email</label>
+        <input type="text" name="email" id="semail" placeholder="Email">
+        <label for="pw" class="ui-hidden-accessible">Password</label>
+        <input type="password" name="pw" id="spw" placeholder="Password">
       </form>
-      <!-- <input type="submit" value="Submit"> -->
-      <a href="#home" class="ui-btn ui-corner-all">Submit</a>
+      <input type="submit" id="signupSubmit" value="Submit">
     </div>
 
     <div data-role="footer" data-position="fixed">
@@ -84,13 +131,12 @@
 
     <div data-role="main" class="ui-content">
       <form method="post" action="demoform.asp">
-        <label for="username" class="ui-hidden-accessible">Email</label>
-        <input type="text" name="fname" id="fname" placeholder="Email">
+        <label for="email" class="ui-hidden-accessible">Email</label>
+        <input type="text" name="email" id="lemail" placeholder="Email">
         <label for="password" class="ui-hidden-accessible">Password</label>
-        <input type="password" name="lname" id="lname" placeholder="Password">
+        <input type="password" name="pw" id="lpw" placeholder="Password">
       </form>
-      <!-- <input type="submit" id="mySubmit" value="Submit"> -->
-      <a href="#home" class="ui-btn ui-corner-all">Submit</a>
+      <input type="submit" id="loginSubmit" value="Submit">
     </div>
 
     <div data-role="footer" data-position="fixed">
@@ -135,10 +181,10 @@
       <h1>Host an Event!</h1>
       <form method="post" action="demoform.asp">
         <label for="eventname" class="ui-hidden-accessible">Name Your Event</label>
-        <input type="text" name="fname" id="fname" placeholder="Name Your Event (Ex. Hostluck's Night In)">
+        <input type="text" name="fname" id="fname" placeholder="Name Your Event (Ex. Tom's party)">
         <label for="date" class="ui-hidden-accessible">mm/dd/yy</label>
         <input type="text" name="scroller" id="scroller" placeholder="mm/dd/yy (Ex. 03/24/16)">
-        <label for="time" class="ui-hidden-accessible">Time of Event (Ex. 8pm)</label>
+        <label for="time" class="ui-hidden-accessible">Time of Event</label>
         <input type="text" name="time" id="time" placeholder="Time of Event (Ex. 8pm)">
       </form>
       <!-- <input type="submit" value="Submit"> -->
@@ -171,7 +217,7 @@
         {{#each hosts}}
           <li>
             <a href="#hostaddress">
-              <img src= images/{{image}} alt="images" class="img">
+              <img src=i mages/ {{image}} alt="images" class="img">
               <h2>{{name}}</h2>
             </a>
           </li>
@@ -205,7 +251,7 @@
         {{#each guests}}
           <li>
             <a href="#attending">
-              <img src= images/{{image}} alt="images" class="img">
+              <img src=i mages/ {{image}} alt="images" class="img">
               <h2>{{name}}</h2>
               <h3>{{zip}}</h3>
             </a>
@@ -405,7 +451,7 @@
       <a href="#recipe" class="ui-btn ui-corner-all">Recipe</a>
       <a href="#cantattend" class="ui-btn ui-corner-all">Can't Attend</a>
       <div data-role="collapsible">
-        <h1>Your Ingredients to bring</h1>
+        <h1>My Ingredients</h1>
         <fieldset data-role="controlgroup">
           <input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
           <label for="checkbox-1">Onions</label>
@@ -552,9 +598,6 @@
       <div data-role="navbar">
         <ul>
           <li>
-            <a href="#anylink" data-rel="back" data-icon="arrow-l"></a>
-          </li>
-          <li>
             <a href="#home" data-icon="home"></a>
           </li>
         </ul>
@@ -563,6 +606,7 @@
 
     <div data-role="main" class="ui-content ui-corner-all">
       <h1> BOOM. Cancelled </h1>
+      <a href="#myeventsmain" class="ui-btn ui-corner-all">My Events</a>
     </div>
 
     <div data-role="footer" data-position="fixed">
@@ -579,9 +623,6 @@
     <div data-role="navbar">
       <ul>
         <li>
-          <a href="#anylink" data-rel="back" data-icon="arrow-l"></a>
-        </li>
-        <li>
           <a href="#home" data-icon="home"></a>
         </li>
       </ul>
@@ -590,6 +631,7 @@
 
   <div data-role="main" class="ui-content ui-corner-all">
     <h1> It's ok, see you next time! </h1>
+    <a href="#myeventsmain" class="ui-btn ui-corner-all">My Events</a>
   </div>
 
   <div data-role="footer" data-position="fixed">
@@ -675,6 +717,7 @@
   <h3>Shmerling, Nguyen, Holeman & Co.</h3>
 </div>
 </div>
+
 </body>
 
 </html>
