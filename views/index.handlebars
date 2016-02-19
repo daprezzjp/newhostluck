@@ -69,6 +69,29 @@
       console.log(data);
     });
   </script>
+  <script>
+    $(document).ready(function() {
+          function save() {
+            var firstname = document.getElementById('sfname').value;
+            var lastname = document.getElementById('slname').value;
+            var email = document.getElementById('semail').value;
+            var pw = document.getElementById('spw').value;
+            localStorage.setItem('firstname', firstname);
+            localStorage.setItem('lastname', lastname);
+            localStorage.setItem('email', email);
+            localStorage.setItem('pw', pw);
+          }
+        function load() {
+          var storedfname = localStorage.getItem('firstname');
+          console.log(storedfname);
+          var storedlname = localStorage.getItem('lastname');
+          var storedemail = localStorage.getItem('email');
+          var storedpw = localStorage.getItem('pw');
+          $('#duration').html("storedfname");
+        }
+      })
+
+  </script>
 </head>
 
 <body>
@@ -112,7 +135,7 @@
         <input type="text" name="semail" id="semail" placeholder="Email">
         <label for="spw" class="ui-hidden-accessible">Password</label>
         <input type="password" name="spw" id="spw" placeholder="Password">
-        <input type="submit" id="signupSubmit" value="Submit">
+        <input type="submit" id="signupSubmit" onclick="save()" value="Submit">
       </form>
     </div>
 
@@ -160,6 +183,7 @@
       </div>
     </div>
 
+    <div id="duration"></div>
     <div data-role="main" class="ui-content">
       <a href="#hostmain" class="ui-btn ui-corner-all">Host</a>
       <a href="#findevent" class="ui-btn ui-corner-all">Guest</a>
@@ -728,7 +752,6 @@
   <h3>Shmerling, Nguyen, Holeman & Co.</h3>
 </div>
 </div>
-
 </body>
 
 </html>
