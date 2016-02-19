@@ -2,11 +2,12 @@ var data = require("../public/json/data.json");
 
 exports.addUser = function(req, res) {
 	var newUser = {
-		"fname": req.query.fname,
-		"lname": req.query.lname,
-		"name": req.query.email,
-		"password": req.query.password
+		"sfname": req.query.sfname,
+		"slname": req.query.slname,
+		"sname": req.query.semail,
+		"spw": req.query.spw
 	} 
+	console.log(newUser);
 	data["users"].push(newUser);
 	res.render('user');
  }

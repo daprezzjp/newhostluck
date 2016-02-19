@@ -19,7 +19,7 @@
   <script src="plugins/mobiscroll/js/mobiscroll.frame.jqm.js"></script>
   <script src="plugins/mobiscroll/js/mobiscroll.jqmwidget.js"></script>
   <script>
-  //submit button
+    //submit button
     $(document).ready(function() {
       $("#signupSubmit").click(function(e) {
         var fname = $("#sfname").val();
@@ -38,16 +38,15 @@
         } else if (password == '') {
           e.preventDefault();
           alert("Please Fill Password");
-        }
-        else {
+        } else {
           e.preventDefault();
-      window.location.href="#home";
+          window.location.href = "#home";
         }
       });
     });
   </script>
   <script>
-  //submit button
+    //submit button
     $(document).ready(function() {
       $("#loginSubmit").click(function(e) {
         var email = $("#lemail").val();
@@ -58,15 +57,18 @@
         } else if (password == '') {
           e.preventDefault();
           alert("Please Fill Password");
-        }
-        else {
+        } else {
           e.preventDefault();
-      window.location.href="#home";
+          window.location.href = "#home";
         }
       });
     });
   </script>
-
+  <script>
+    $.getJSON('json/data.json', function(data) {
+      console.log(data);
+    });
+  </script>
 </head>
 
 <body>
@@ -77,7 +79,9 @@
     </div>
 
     <div data-role="main" class="ui-content">
+      <h5>Existing Users</h5>
       <a href="#login" class="ui-btn ui-corner-all">Log In</a>
+      <h5>Don't have an account?</h5>
       <a href="#signup" class="ui-btn ui-corner-all">Sign Up</a>
     </div>
 
@@ -99,17 +103,17 @@
     </div>
 
     <div data-role="main" class="ui-content">
-      <form method="post" action="demoform.asp">
-        <label for="fname" class="ui-hidden-accessible">Firstname</label>
-        <input type="text" name="fname" id="sfname" placeholder="First Name">
-        <label for="lname" class="ui-hidden-accessible">Lastname</label>
-        <input type="text" name="lname" id="slname" placeholder="Last Name">
-        <label for="email" class="ui-hidden-accessible">Email</label>
-        <input type="text" name="email" id="semail" placeholder="Email">
-        <label for="pw" class="ui-hidden-accessible">Password</label>
-        <input type="password" name="pw" id="spw" placeholder="Password">
+      <form method="get" action="/user">
+        <label for="sfname" class="ui-hidden-accessible">Firstname</label>
+        <input type="text" name="sfname" id="sfname" placeholder="First Name">
+        <label for="slname" class="ui-hidden-accessible">Lastname</label>
+        <input type="text" name="slname" id="slname" placeholder="Last Name">
+        <label for="semail" class="ui-hidden-accessible">Email</label>
+        <input type="text" name="semail" id="semail" placeholder="Email">
+        <label for="spw" class="ui-hidden-accessible">Password</label>
+        <input type="password" name="spw" id="spw" placeholder="Password">
+        <input type="submit" id="signupSubmit" value="Submit">
       </form>
-      <input type="submit" id="signupSubmit" value="Submit">
     </div>
 
     <div data-role="footer" data-position="fixed">
@@ -136,7 +140,12 @@
         <label for="password" class="ui-hidden-accessible">Password</label>
         <input type="password" name="pw" id="lpw" placeholder="Password">
       </form>
-      <input type="submit" id="loginSubmit" value="Submit">
+      <fieldset data-role="controlgroup">
+        <input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">
+        <label for="chck-rememberme">Remember me</label>
+        <input type="submit" id="loginSubmit" value="Submit">
+      </fieldset>
+
     </div>
 
     <div data-role="footer" data-position="fixed">
@@ -156,6 +165,7 @@
       <a href="#findevent" class="ui-btn ui-corner-all">Guest</a>
       <a href="#myeventsmain" class="ui-btn ui-corner-all">My Events</a>
     </div>
+
 
     <div data-role="footer" data-position="fixed">
       <h3>Shmerling, Nguyen, Holeman & Co.</h3>
@@ -188,8 +198,9 @@
         <input type="text" name="time" id="time" placeholder="Time of Event (Ex. 8pm)">
       </form>
       <!-- <input type="submit" value="Submit"> -->
-      <a href="#pickmealhost" class="ui-btn ui-corner-all">Submit</a>
+      <a href="#pickmealhost" id="hostmainSubmit" class="ui-btn ui-corner-all">Submit</a>
     </div>
+
 
     <div data-role="footer" data-position="fixed">
       <h3>Shmerling, Nguyen, Holeman & Co.</h3>
@@ -213,11 +224,11 @@
 
     <div data-role="main" class="ui-content">
       <h1>Pick Your Meal!</h1>
-      <ul data-role="listview">
+      <ul data-role="listview" data-filter="true">
         {{#each hosts}}
           <li>
             <a href="#hostaddress">
-              <img src=i mages/ {{image}} alt="images" class="img">
+              <img src= {{image}} alt="images" class="img">
               <h2>{{name}}</h2>
             </a>
           </li>
@@ -246,12 +257,12 @@
     </div>
 
     <div data-role="main" class="ui-content">
-      <h1>Choose the Meal you want to join!</h1>
-      <ul data-role="listview">
+      <h4>Choose the Meal you want to join!</h4>
+      <ul data-role="listview" data-filter="true">
         {{#each guests}}
           <li>
             <a href="#attending">
-              <img src=i mages/ {{image}} alt="images" class="img">
+              <img src= {{image}} alt="images" class="img">
               <h2>{{name}}</h2>
               <h3>{{zip}}</h3>
             </a>
@@ -281,7 +292,7 @@
     </div>
 
     <div data-role="main" class="ui-content">
-      <h1>What's the Address?</h1>
+      <h4>What's the Address?</h4>
       <form method="post" action="demoform.asp">
         <label for="eventname" class="ui-hidden-accessible">Street (Ex. 123 Gilman Dr)</label>
         <input type="text" name="fname" id="fname" placeholder="Street Address (Ex. 123 Gilman Dr)">
@@ -290,15 +301,15 @@
         <label for="time" class="ui-hidden-accessible">Zip Code (Ex. 90210)</label>
         <input type="text" name="time" id="time" placeholder="Zip Code (Ex. 90210)">
       </form>
-      <!-- <h3> OR </h3>
-			<div data-role="collapsible">
-				<h3>Previous Addresses:</h3>
-				<ul data-role="listview">
-					{{#each addresses}}
-					<li><a href="#eventsetup">{{street}}, {{city}} {{zip}}</a></li>
-					{{/each}}
-				</ul>
-			</div> -->
+      <h3> OR </h3>
+      <div data-role="collapsible">
+        <h3>Previous Addresses:</h3>
+        <ul data-role="listview">
+          {{#each addresses}}
+            <li><a href="#eventsetup">{{street}}, {{city}} {{zip}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
 
       <!-- <input type="submit" value="Submit"> -->
       <a href="#eventsetup" class="ui-btn ui-corner-all">Submit</a>
@@ -413,7 +424,7 @@
       <a href="#recipe" class="ui-btn ui-corner-all">Recipe</a>
       <a href="#cancelled" class="ui-btn ui-corner-all">Cancel Event</a>
       <div data-role="collapsible">
-        <h1>Your Ingredients to have</h1>
+        <h1>My Ingredients</h1>
         <fieldset data-role="controlgroup">
           <input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
           <label for="checkbox-1">Onions</label>
@@ -423,7 +434,7 @@
           <label for="checkbox-3">Corn On The Cob</label>
         </fieldset>
       </div>
-      <h4>Address: 123 test drive, TestingVille, CA 12345</h4>
+      <a href="http://maps.apple.com/?daddr=9500+Gilman+Dr,+La+Jolla+CA+92093">Address: 123 test drive, TestingVille, CA 12345</a>
     </div>
 
     <div data-role="footer" data-position="fixed">
@@ -461,7 +472,7 @@
           <label for="checkbox-3">Corn On The Cob</label>
         </fieldset>
       </div>
-      <h4>Address: 123 test drive, TestingVille, CA 12345</h4>
+      <a href="http://maps.apple.com/?daddr=9500+Gilman+Dr,+La+Jolla+CA+92093">Address: 9500 Gilman Dr, La Jolla, CA 92093</a>
     </div>
 
     <div data-role="footer" data-position="fixed">
