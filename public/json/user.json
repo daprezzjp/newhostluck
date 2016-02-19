@@ -1,0 +1,21 @@
+"users": [{
+  "sfname": "Randy",
+  "slname": "Holeman",
+  "semail": "rholeman",
+  "spw": "cse170"
+}, {
+  "sfname": "Chris",
+  "slname": "Shmerling",
+  "semail": "cshmerling",
+  "spw": "cogs120"
+}, {
+  "sfname": "Johnny",
+  "slname": "Nguyen",
+  "semail": "jnguyen",
+  "spw": "cogs120"
+}, {
+  "sfname": "Testing",
+  "slname": "Testing",
+  "semail": "test",
+  "spw": "test"
+} ]
