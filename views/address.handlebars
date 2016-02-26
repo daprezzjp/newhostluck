@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html>
+{{> html_head}}
+{{> navbar}}
 
-<head>
-  <title>Add User</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- css -->
-  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-  <link rel="stylesheet" href="plugins/mobiscroll/css/mobiscroll.frame.jqm.css">
-  <link rel="stylesheet" href="plugins/mobiscroll/css/mobiscroll.scroller.jqm.css">
-  <!-- js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <script src="plugins/mobiscroll/js/mobiscroll.core.js"></script>
-  <script src="plugins/mobiscroll/js/mobiscroll.frame.jqm.js"></script>
-  <script src="plugins/mobiscroll/js/mobiscroll.jqmwidget.js"></script>
-
-</head>
-
-<body>
-  <!---Splash Page------------------------------------------>
-  <div data-role="page">
-    <div data-role="container">
-      {{#each addresses}}
-      <a href="#">{{street}}</a>
-      {{/each}}
-      <a href="/">Return</a>
+  <div class="container">
+    <h1> Address</h1>
+    <br />
+    <form role='form' action="/login" method="post">
+      <div class="form-group">
+        <input class="form-control" type='text' name="street" placeholder='Street' />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type='text' name="city" placeholder='City' />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type='text' name="state" placeholder='State' />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type='number' name="zip" placeholder='Zip'  />
+      </div>
+      <button href="/home" class="btn btn-lg btn-default btn-block" type='submit'> Submit</button>
+    </form>
     </div>
-  </div>
-</body>
-</html>
+
+  </body>
+      {{> footer_back_login}}
+  </html>

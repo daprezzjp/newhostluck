@@ -1,0 +1,30 @@
+{{> html_head}}
+{{> navbar}}
+
+<body>
+
+  <div class="container">
+    <h2>Host:</h2>
+    {{#each myHostAddr}}
+      <li>
+        <a href="/login">
+          <button class="btn btn-lg btn-default btn-block"> {{myHostAddr.eventname}}</button>
+        </a>
+      </li>
+      <br>
+    {{/each}}
+
+    <h2>Attend:</h2>
+    {{#each myAttendAddr}}
+      <li>
+        <a href="/login">
+          <button class="btn btn-lg btn-default btn-block"> {{myAttendAddr.eventname}}</button>
+        </a>
+      </li>
+      <br>
+    {{/each}}
+  </div>
+
+</body>
+
+</html>

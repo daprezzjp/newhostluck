@@ -1,0 +1,16 @@
+{{> html_head}}
+{{> navbar}}
+
+  <div class="container">
+    <h1> Choose the Meal you want to join!</h1>
+    <br />
+    {{#each guests}}
+    <ul>
+      <li>
+        <div class="item"><img src="images/{{images}}" alt="{{id}}"></div></li>
+    </ul>
+    {{/each}}
+
+  </body>
+      {{> footer_back_home}}
+  </html>
