@@ -11,16 +11,16 @@ var express = require('express'),
   favicon = require('serve-favicon'),
   logger = require('morgan'),
   cookieParser = require('cookie-parser'),
-  mongoose = require('mongoose'),
-  passport = require('passport'),
-  LocalStrategy = require('passport-local').Strategy,
+  // mongoose = require('mongoose'),
+  // passport = require('passport'),
+  // LocalStrategy = require('passport-local').Strategy,
   flash = require('connect-flash'),
   methodoverride = require('method-override'),
 //routes
   index = require('./routes/index'),
-  user = require('./routes/user'),
   login = require('./routes/login'),
   register = require('./routes/register'),
+  user = require('./routes/user'),
   home = require('./routes/home'),
   host = require('./routes/host'),
   address = require('./routes/address'),
@@ -61,15 +61,15 @@ app.use(methodoverride());
 app.use(express.cookieParser());
 
 app.use(require('express-session')({
-  secret: 'keyboard cat',
+  secret: 'secret',
   resave: false,
   saveUninitialized: false
 }));
 app.use(express.session());
 app.use(app.router);
-app.use(passport.initialize());
+// app.use(passport.initialize());
 app.use(flash());
-app.use(passport.session());
+// app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -77,12 +77,17 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.use(stormpath.init(app, {
-  web: true
-}))
+// app.use(stormpath.init(app, {
+//   web: true
+// }))
 
 // Add routes here
 app.get('/', index.view);
+app.get('/login', login.login);
+app.get('/register', register.register);
+app.get('/home', home.home);
+
+
 app.get('/address', address.addAddress);
 app.get('/attending', attending.attending);
 app.get('/cancelled', cancelled.cancelled);
@@ -94,25 +99,19 @@ app.get('/eventsetup', eventsetup.eventsetup);
 app.get('/findevent', findevent.findevent);
 app.get('/guestmain', guestmain.guestmain);
 app.get('/guestsearch', guestsearch.guestsearch);
-app.get('/home', home.home);
 app.get('/host', host.host);
 app.get('/hostaddress', hostaddress.hostaddress);
-app.get('/login', login.login);
 app.get('/myeventsmain', myeventsmain.myeventsmain);
 app.get('/pickmeal', pickmeal.pickmeal);
 app.get('/recipe', recipe.recipe);
-app.get('/register', register.register);
-app.get('/error', error.error);
-app.get('/user', user.user);
-app.get('/address', address.addAddress);
 
 // passport config
-var Account = require('./models/account');
-passport.use(new LocalStrategy(Account.authenticate()));
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
+// var Account = require('./models/account');
+// passport.use(new LocalStrategy(Account.authenticate()));
+// passport.serializeUser(Account.serializeUser());
+// passport.deserializeUser(Account.deserializeUser());
 
-mongoose.connect('mongodb://admin:admin@ds013848.mongolab.com:13848/heroku_7x340tw3');
+// mongoose.connect('mongodb://admin:admin@ds013848.mongolab.com:13848/heroku_7x340tw3');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -149,4 +148,4 @@ http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-module.exports = app;
+// module.exports = app;
