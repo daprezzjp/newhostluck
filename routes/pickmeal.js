@@ -1,6 +1,6 @@
+var meal = require('../public/json/data.json');
+
 exports.pickmeal = function(req, res){
-//  console.log(data);
-  res.render('pickmeal', {
-    title: 'Pick Meal'
-  });
+  console.log(meal);
+  res.render('pickmeal', meal);
  };

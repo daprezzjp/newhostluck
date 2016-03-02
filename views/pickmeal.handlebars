@@ -4,14 +4,14 @@
   <div class="container">
     <h1> Pick Your Meal</h1>
     <br />
-{{#each hosts}}
-<ul>
-  <li>
-    <div class="item"><img src="images/{{images}}" alt="{{id}}"></div></li>
-</ul>
-{{/each}}
 
 <div class="owl-carousel">
+  {{#each hosts}}
+  <ul>
+      <a href="/home"><div class="item"><img src="{{image}}" alt="{{id}}"></div></a>
+  </ul>
+  {{/each}}
+    <!-- <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
     <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
     <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
     <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
@@ -26,8 +26,7 @@
     <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
     <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
     <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
+    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div> -->
 </div>
 
 <script>
