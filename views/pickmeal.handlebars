@@ -3,42 +3,23 @@
 
   <div class="container">
     <h1> Pick Your Meal</h1>
-    <br />
+    <h3> Click to choose the meal!</h3>
 
 <div class="owl-carousel">
   {{#each hosts}}
-  <ul>
-      <a href="/home"><div class="item"><img src="{{image}}" alt="{{id}}"></div></a>
-  </ul>
+  <ul><a href="/home" class="item"><img src="{{image}}" alt="{{id}}" height="300"><h5>{{name}}</h5></a></ul>
   {{/each}}
-    <!-- <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div>
-    <div class="item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg" alt="Smiley face"></div> -->
 </div>
-
 <script>
 $(document).ready(function() {
   $('.owl-carousel').owlCarousel({
   loop:true,
-  margin:10,
+  margin:0,
   responsiveClass:true,
   responsive:{
       0:{
           items:1,
-          nav:true
+          nav: false
       },
       600:{
           items:3,

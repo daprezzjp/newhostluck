@@ -40,10 +40,6 @@ var express = require('express'),
   recipe = require('./routes/recipe'),
   register = require('./routes/register'),
 
-  //var address = require('./routes/address');
-  // Example route
-  // var user = require('./routes/user');
-
   app = express();
 
 // all environments
@@ -86,7 +82,6 @@ app.get('/', index.view);
 app.get('/login', login.login);
 app.get('/register', register.register);
 app.get('/home', home.home);
-
 
 app.get('/address', address.addAddress);
 app.get('/attending', attending.attending);
