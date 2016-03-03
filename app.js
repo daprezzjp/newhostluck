@@ -39,7 +39,7 @@ var express = require('express'),
   pickmeal = require('./routes/pickmeal'),
   recipe = require('./routes/recipe'),
   register = require('./routes/register'),
-
+//  facebook = require('./routes/log'),
   app = express();
 
 // all environments
@@ -81,7 +81,7 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/login', login.login);
 app.get('/register', register.register);
-app.get('/home', home.home);
+app.get('/home/:id', home.home);
 
 app.get('/address', address.addAddress);
 app.get('/attending', attending.attending);
@@ -99,7 +99,7 @@ app.get('/hostaddress', hostaddress.hostaddress);
 app.get('/myeventsmain', myeventsmain.myeventsmain);
 app.get('/pickmeal', pickmeal.pickmeal);
 app.get('/recipe', recipe.recipe);
-
+//app.get('/log', facebook.log);
 // passport config
 // var Account = require('./models/account');
 // passport.use(new LocalStrategy(Account.authenticate()));
