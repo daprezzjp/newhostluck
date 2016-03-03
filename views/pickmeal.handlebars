@@ -4,13 +4,12 @@
   <div class="container">
     <h1> Pick Your Meal</h1>
     <h3> Click to choose the meal!</h3>
-
+{{#if showAlternate}}
 <div class="owl-carousel">
   {{#each hosts}}
   <ul><a href="/address/{{id}}" class="item"><img src="{{image}}" alt="{{id}}" height="300"><h5>{{name}}</h5></a></ul>
   {{/each}}
 </div>
-
 <script>
 $(document).ready(function() {
   $('.owl-carousel').owlCarousel({
@@ -35,7 +34,13 @@ $(document).ready(function() {
 });
 });
 </script>
-
+{{else}}
+<div class="list-group">
+  {{#each hosts}}
+  <ul><a href="/address/{{id}}" class="item"><img src="{{image}}" alt="{{id}}" height="300"><h5>{{name}}</h5></a></ul>
+  {{/each}}
+</div>
+{{/if}}
   </body>
       {{> footer_back_home}}
   </html>
