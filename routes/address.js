@@ -7,9 +7,8 @@ exports.addAddress = function(req, res) {
 		"state": req.query.state,
 		"zip": req.query.zip
 	} 
-	console.log(newAddress);
-	console.log(data);
-	data["addresses"].push(newAddress);
+	console.log(data[Users[0]]);
+	data["Users"].push(newAddress);
 	console.log(data);
 	res.render('address', data);
  }

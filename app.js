@@ -89,7 +89,7 @@ app.get('/cancelled', cancelled.cancelled);
 app.get('/cantattend', cantattend.cantattend);
 app.get('/choosemeal', choosemeal.choosemeal);
 app.get('/eventinfoguest', eventinfoguest.eventinfoguest);
-app.get('/eventinfohost', eventinfohost.eventinfohost);
+app.get('/eventinfohost/:id', eventinfohost.eventinfohost);
 app.get('/eventsetup', eventsetup.eventsetup);
 app.get('/findevent', findevent.findevent);
 app.get('/guestmain', guestmain.guestmain);

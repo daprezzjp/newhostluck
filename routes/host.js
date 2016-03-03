@@ -1,4 +1,4 @@
-var data = require("../public/json/data.json");
+var data = require("../public/json/data.json").Users[0];
 
 
 exports.host = function(req, res){
@@ -8,7 +8,7 @@ exports.host = function(req, res){
  		"time": req.query.time
  	} 
  	console.log(newHost);
- 	data["events"].push(newHost);
+ 	data["addresses"].push(newHost);
   console.log(data);
  	res.render('host', data);
  };

@@ -5,8 +5,8 @@
 
   <div class="container">
     <h2>Host:</h2>
-    {{#each events}}
-        <a href="#" class="btn btn-lg btn-default btn-block"> {{eventname}}</a>
+    {{#each Users.0.events}}
+        <a href="/eventinfohost/{{id}}" class="btn btn-lg btn-default btn-block"> {{eventname}}</a>
       <br>
     {{/each}}
 
