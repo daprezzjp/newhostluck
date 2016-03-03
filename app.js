@@ -103,7 +103,10 @@ app.get('/myeventsmain', myeventsmain.myeventsmain);
 app.get('/pickmeal', pickmeal.pickmeal);
 app.get('/recipe', recipe.recipe);
 app.get('/addhost', addHost.addHost);
+app.get('/list', pickmeal.list);
+
 //app.get('/log', facebook.log);
+
 // passport config
 // var Account = require('./models/account');
 // passport.use(new LocalStrategy(Account.authenticate()));
