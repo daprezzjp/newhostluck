@@ -5,22 +5,14 @@
 
   <div class="container">
     <h2>Host:</h2>
-    {{#each myHostAddr}}
-      <li>
-        <a href="/login">
-          <button class="btn btn-lg btn-default btn-block"> {{myHostAddr.eventname}}</button>
-        </a>
-      </li>
+    {{#each events}}
+        <a href="#" class="btn btn-lg btn-default btn-block"> {{eventname}}</a>
       <br>
     {{/each}}
 
     <h2>Attend:</h2>
-    {{#each myAttendAddr}}
-      <li>
-        <a href="/login">
-          <button class="btn btn-lg btn-default btn-block"> {{myAttendAddr.eventname}}</button>
-        </a>
-      </li>
+    {{#each guestevents}}
+        <a href="#" class="btn btn-lg btn-default btn-block"> {{eventname}}</a>
       <br>
     {{/each}}
   </div>

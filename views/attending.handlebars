@@ -5,13 +5,17 @@
     <h1> Great! See you there</h1>
     <h4> Here is the Event details:</h4>
     <br />
-    <h3> Event name:</h3><h3>{{name}}</h3>
-    <h3> Day:</h3><h3>{{date}}</h3>
-    <h3> time:</h3><h3>{{time}}</h3>
-    {{#each addresses}}
-    <h3> Address: {{street}} {{city}}, {{state}} {{zip}}</h3>
+    {{#each events}}
+    {{#if @last}}
+    <h3> Event name: {{eventname}}</h3>
+    <h3> Day: {{date}}</h3>
+    <h3> Time: {{time}}</h3>
+    {{/if}}
     {{/each}}
-    <a href="#myeventsmain" class="ui-btn ui-corner-all">My Events</a>
+    {{#each addresses}}
+    <h3>{{#if @last}}Address: {{street}} {{city}}, {{state}} {{zip}}{{/if}}</h3>
+    {{/each}}
+    <a href="/myeventsmain" class="btn btn-lg btn-default btn-block">My Events</a>
   </div>
   </body>
       <!-- {{> footer_back_home}} -->

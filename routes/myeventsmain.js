@@ -1,6 +1,5 @@
+ var data = require("../public/json/data.json");
+
 exports.myeventsmain = function(req, res){
-//  console.log(data);
-  res.render('myeventsmain', {
-    title: 'My Events Main'
-  });
+   res.render('myeventsmain', data);
  };

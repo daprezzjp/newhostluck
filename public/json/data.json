@@ -72,6 +72,7 @@
     "recipe5": "Ketchup",
     "id": "project8"
   }],
+
   "guests": [{
     "name": "Chicken Pot Pie",
     "image": "http://goo.gl/1v48ya",
@@ -130,6 +131,7 @@
     "city": "Billings",
     "zip": "65392"
   }],
+
   "users": [{
     "sfname": "Randy",
     "slname": "Holeman",
@@ -150,5 +152,17 @@
     "slname": "Testing",
     "semail": "test",
     "spw": "test"
+  } ],
+
+  "events": [{
+    "eventname": "Randy's Party",
+    "date": "04/22/2016",
+    "time": "8:00 PM"
+  },
+  {
+    "eventname": "Chris's Party",
+    "date": "04/31/2016",
+    "time": "5:00 PM"
   } ]
+
 }
