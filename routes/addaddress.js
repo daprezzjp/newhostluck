@@ -6,8 +6,8 @@ exports.addAddress = function(req, res) {
 		"city": req.query.city,
 		"state": req.query.state,
 		"zip": req.query.zip
-	} 
-	var foodid = { "id": req.params.id}
+	} ;
+	var foodid = { "id": req.params.id };
 	data["addresses"].push(newAddress);
 	data["foodids"].push(foodid);
 	console.log(data);

@@ -10,17 +10,15 @@
       <h3> Time: {{time}}</h3>
   {{/if}}
   {{/events}}
-  {{#hosts}}
-  
+  {{#foodids}}
+    <h3>{{id}}</h3>
+  {{/foodids}}
   <h3> Hosted Food: {{name}}</h3>
 
 
   {{#addresses}}
   <h3>{{#if @last}}<a href="http://maps.apple.com/?daddr={{street}},+{{city}}+{{state}}+{{zip}}">{{street}} {{city}}, {{state}} <br />{{zip}}</a>{{/if}}</h3>
   {{/addresses}}
-
-
-
 
   <a href="/recipe" class="btn btn-lg btn-default col-sm-6">Recipe</a>
   <a href="/cancelled" class="btn btn-lg btn-default col-sm-6">Cancel Event</a>
@@ -35,7 +33,6 @@
       <label for="checkbox-3">Corn On The Cob</label>
     </fieldset>
   </div>
-  <a href="http://maps.apple.com/?daddr={{street}},+{{city}}+{{state}}+{{zip}}">Address: {{street}}, {{city}}, {{state}} {{zip}}</a>
 </div>
 
 </body>

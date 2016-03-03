@@ -5,8 +5,7 @@
 var express = require('express'),
   http = require('http'),
   path = require('path'),
-  hbs = require('hbs'),
-  //handlebars = require('express-handlebars'),
+  handlebars = require('express-handlebars'),
   session = require('express-session'),
   bodyParser = require('body-parser'),
   favicon = require('serve-favicon'),
@@ -49,9 +48,7 @@ var express = require('express'),
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
- app.engine('handlebars', handlebars());
-// app.engine('handlebars', hbs());
-//app.set('view engine', 'hbs');
+app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -112,6 +109,16 @@ app.get('/addhost', addHost.addHost);
 // passport.use(new LocalStrategy(Account.authenticate()));
 // passport.serializeUser(Account.serializeUser());
 // passport.deserializeUser(Account.deserializeUser());
+
+var hbs = handlebars.create({
+    // Specify helpers which are only registered on this instance.
+    helpers: {
+        foo: function () { return 'FOO!'; },
+        bar: function () { return 'BAR!'; }
+    }
+});
+
+
 
 // mongoose.connect('mongodb://admin:admin@ds013848.mongolab.com:13848/heroku_7x340tw3');
 
