@@ -42,6 +42,7 @@ var express = require('express'),
   register = require('./routes/register'),
   addaddress = require('./routes/addaddress'),
   addHost = require('./routes/addhost'),
+  pickmeallist = require('./routes/pickmeallist'),
 //  facebook = require('./routes/log'),
   app = express();
 
