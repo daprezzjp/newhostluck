@@ -17,5 +17,10 @@ function statusChangeCallback(response) {
 }
 
 function changeUser(response){
-	console.log(response);
+var str1 = "http://localhost:3000/home/";
+var str2 = response.id.toString();
+var res = str1.concat(str2);
+
+window.location.href=res; 
+
 }

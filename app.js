@@ -81,7 +81,7 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/login', login.login);
 app.get('/register', register.register);
-app.get('/home', home.home);
+app.get('/home/:id', home.home);
 
 app.get('/address', address.addAddress);
 app.get('/attending', attending.attending);
