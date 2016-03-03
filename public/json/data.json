@@ -1,6 +1,4 @@
 {
-  "Users": [{
-    "id": 1,
   "hosts": [{
     "name": "Beef Pot Pie",
     "image": "http://goo.gl/1v48ya",
@@ -9,7 +7,7 @@
     "recipe3": "Cream Sauce",
     "recipe4": "Mushrooms",
     "recipe5": "Bowl",
-    "id1": "project1"
+    "id": 0
   }, {
     "name": "Yogurt",
     "image": "https://goo.gl/f2NsPU",
@@ -18,7 +16,7 @@
     "recipe3": "Strawberries",
     "recipe4": "Blueberries",
     "recipe5": "Granola",
-    "id": "project2"
+    "id": 1
   }, {
     "name": "Pop Corn",
     "image": "https://goo.gl/TRa1HR",
@@ -27,7 +25,7 @@
     "recipe3": "Caramel",
     "recipe4": "Butter",
     "recipe5": "Seasoned Salt",
-    "id": "project3"
+    "id": 2
   }, {
     "name": "Sangria",
     "image": "http://goo.gl/DZjkCg",
@@ -36,7 +34,7 @@
     "recipe3": "Oranges",
     "recipe4": "Blueberries",
     "recipe5": "Grapefruit",
-    "id": "project4"
+    "id": 3
   }, {
     "name": "Spaghetti",
     "image": "http://goo.gl/7CtUHm",
@@ -45,7 +43,7 @@
     "recipe3": "Meatballs",
     "recipe4": "Olive Oil",
     "recipe5": "Chicken Broth",
-    "id": "project5"
+    "id": 4
   }, {
     "name": "Sushi",
     "image": "https://goo.gl/HK51RO",
@@ -54,7 +52,7 @@
     "recipe3": "Cucumbers",
     "recipe4": "Salmon",
     "recipe5": "Tuna",
-    "id": "project6"
+    "id": 5
   }, {
     "name": "Hot Dogs",
     "image": "http://goo.gl/bN2axu",
@@ -63,7 +61,7 @@
     "recipe3": "Mustard",
     "recipe4": "Ketchup",
     "recipe5": "Onions",
-    "id": "project7"
+    "id": 6
   }, {
     "name": "Hamburgers",
     "image": "http://goo.gl/GtuQ76",
@@ -72,48 +70,48 @@
     "recipe3": "Mustard",
     "recipe4": "Onions",
     "recipe5": "Ketchup",
-    "id": "project8"
+    "id": 7
   }],
 
   "guests": [{
     "name": "Chicken Pot Pie",
     "image": "http://goo.gl/1v48ya",
-    "id": "project1",
+    "id": 0,
     "zip": "92126"
   }, {
     "name": "Yogurt",
     "image": "https://goo.gl/f2NsPU",
-    "id": "project2",
+    "id": 1,
     "zip": "92058"
   }, {
     "name": "Pop Corn",
     "image": "https://goo.gl/TRa1HR",
-    "id": "project3",
+    "id": 2,
     "zip": "96520"
   }, {
     "name": "Sangria",
     "image": "http://goo.gl/DZjkCg",
-    "id": "project4",
+    "id": 3,
     "zip": "91234"
   }, {
     "name": "Spaghetti",
     "image": "http://goo.gl/7CtUHm",
-    "id": "project5",
+    "id": 4,
     "zip": "96789"
   }, {
     "name": "Sushi",
     "image": "https://goo.gl/HK51RO",
-    "id": "project6",
+    "id": 5,
     "zip": "92126"
   }, {
     "name": "Hot Dogs",
     "image": "http://goo.gl/bN2axu",
-    "id": "project7",
+    "id": 6,
     "zip": "91580"
   }, {
     "name": "Hamburgers",
     "image": "http://goo.gl/GtuQ76",
-    "id": "project8",
+    "id": 7,
     "zip": "51324"
   }],
   "addresses": [{
@@ -134,170 +132,7 @@
     "zip": "65392"
   }],
 
-  "events": [{
-    "id": 0,
-    "eventname": "Randy's Party",
-    "date": "04/22/2016",
-    "time": "8:00 PM",
-    "tf": false
-  },
-  {
-    "id": 1,
-    "eventname": "Chris's Party",
-    "date": "04/31/2016",
-    "time": "5:00 PM",
-    "tf": false
-  } ]
-},
-{
-  "id": 2,
-"hosts": [{
-  "name": "Beef Pot Pie",
-  "image": "http://goo.gl/1v48ya",
-  "recipe1": "Beef",
-  "recipe2": "Crust",
-  "recipe3": "Cream Sauce",
-  "recipe4": "Mushrooms",
-  "recipe5": "Bowl",
-  "id1": "project1"
-}, {
-  "name": "Yogurt",
-  "image": "https://goo.gl/f2NsPU",
-  "recipe1": "Milk",
-  "recipe2": "Curd",
-  "recipe3": "Strawberries",
-  "recipe4": "Blueberries",
-  "recipe5": "Granola",
-  "id": "project2"
-}, {
-  "name": "Pop Corn",
-  "image": "https://goo.gl/TRa1HR",
-  "recipe1": "Corn",
-  "recipe2": "Salt",
-  "recipe3": "Caramel",
-  "recipe4": "Butter",
-  "recipe5": "Seasoned Salt",
-  "id": "project3"
-}, {
-  "name": "Sangria",
-  "image": "http://goo.gl/DZjkCg",
-  "recipe1": "Wine",
-  "recipe2": "Strawberries",
-  "recipe3": "Oranges",
-  "recipe4": "Blueberries",
-  "recipe5": "Grapefruit",
-  "id": "project4"
-}, {
-  "name": "Spaghetti",
-  "image": "http://goo.gl/7CtUHm",
-  "recipe1": "Spaghetti",
-  "recipe2": "Meatball Sauce",
-  "recipe3": "Meatballs",
-  "recipe4": "Olive Oil",
-  "recipe5": "Chicken Broth",
-  "id": "project5"
-}, {
-  "name": "Sushi",
-  "image": "https://goo.gl/HK51RO",
-  "recipe1": "Rice",
-  "recipe2": "Rice Vinegar",
-  "recipe3": "Cucumbers",
-  "recipe4": "Salmon",
-  "recipe5": "Tuna",
-  "id": "project6"
-}, {
-  "name": "Hot Dogs",
-  "image": "http://goo.gl/bN2axu",
-  "recipe1": "Hot Dog",
-  "recipe2": "Hot Dog Buns",
-  "recipe3": "Mustard",
-  "recipe4": "Ketchup",
-  "recipe5": "Onions",
-  "id": "project7"
-}, {
-  "name": "Hamburgers",
-  "image": "http://goo.gl/GtuQ76",
-  "recipe1": "Beef Patty",
-  "recipe2": "Buns",
-  "recipe3": "Mustard",
-  "recipe4": "Onions",
-  "recipe5": "Ketchup",
-  "id": "project8"
-}],
-
-"guests": [{
-  "name": "Chicken Pot Pie",
-  "image": "http://goo.gl/1v48ya",
-  "id": "project1",
-  "zip": "92126"
-}, {
-  "name": "Yogurt",
-  "image": "https://goo.gl/f2NsPU",
-  "id": "project2",
-  "zip": "92058"
-}, {
-  "name": "Pop Corn",
-  "image": "https://goo.gl/TRa1HR",
-  "id": "project3",
-  "zip": "96520"
-}, {
-  "name": "Sangria",
-  "image": "http://goo.gl/DZjkCg",
-  "id": "project4",
-  "zip": "91234"
-}, {
-  "name": "Spaghetti",
-  "image": "http://goo.gl/7CtUHm",
-  "id": "project5",
-  "zip": "96789"
-}, {
-  "name": "Sushi",
-  "image": "https://goo.gl/HK51RO",
-  "id": "project6",
-  "zip": "92126"
-}, {
-  "name": "Hot Dogs",
-  "image": "http://goo.gl/bN2axu",
-  "id": "project7",
-  "zip": "91580"
-}, {
-  "name": "Hamburgers",
-  "image": "http://goo.gl/GtuQ76",
-  "id": "project8",
-  "zip": "51324"
-}],
-"addresses": [{
-  "street": "9784 Magnolia Drive",
-  "city": "Kearny",
-  "zip": "92126"
-}, {
-  "street": "4544 Wood Street",
-  "city": "Corpus Christi",
-  "zip": "92058"
-}, {
-  "street": "8032 Park Avenue",
-  "city": "Austin",
-  "zip": "09123"
-}, {
-  "street": "813 Jackson Avenue",
-  "city": "Billings",
-  "zip": "65392"
-}],
-
-"events": [{
-  "id": 0,
-  "eventname": "Randy's Party",
-  "date": "04/22/2016",
-  "time": "8:00 PM",
-  "tf": false
-},
-{
-  "id": 1,
-  "eventname": "Chris's Party",
-  "date": "04/31/2016",
-  "time": "5:00 PM",
-  "tf": false
-} ]
-}
-]
+  "events": [],
+  "ids": [],
+  "foodids": []
 }

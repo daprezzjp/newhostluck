@@ -1,9 +1,8 @@
+var data = require("../public/json/data.json");
 exports.home = function(req, res){
-//  console.log(data);
-
-console.log(req.params.id);
-  res.render('home', {
-    title: 'Home'
-  });
- };
-
+  var userID = {
+    "id": req.params.id
+  };
+  data["ids"].push(userID);
+  res.render('home', data);
+};

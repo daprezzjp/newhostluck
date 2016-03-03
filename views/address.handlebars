@@ -4,7 +4,8 @@
   <div class="container">
     <h1> Address</h1>
     <br />
-    <form role='form' action="/address" method="get">
+    <form role='form' action="/addaddress" method="get">
+      <input type="hidden" name="redirect" value="/attending" />
       <div class="form-group">
         <input class="form-control" type='text' name="street" placeholder='Street' />
       </div>
@@ -17,7 +18,7 @@
       <div class="form-group">
         <input class="form-control" type='number' name="zip" placeholder='Zip'  />
       </div>
-      <input class="btn btn-lg btn-default btn-block" type='submit' />
+      <input class="btn btn-lg btn-default btn-block" onsubmit="redirect()" type='submit' />
     </form>
     <h3> OR </h3>
     <div class="panel-group">
@@ -34,7 +35,11 @@
     </div>
   </div>
 </div>
-
+<script>
+function redirect() {
+    window.location = "attending";
+}
+</script>
   </body>
       {{> footer_back_login}}
   </html>

@@ -3,7 +3,7 @@
 <div class="container">
   <h1> Host an Event!</h1>
   <br />
-  <form role='form' action="/host" method="get">
+  <form role='form' action="/addhost" method="get">
     <div class="form-group">
       <input class="form-control" type='text' name="eventname" placeholder='Name Your Event' />
     </div>
@@ -13,12 +13,9 @@
     <div class="form-group">
       <input class="form-control" type='time' name="time" placeholder='Time of Event (Ex. 8pm)' />
     </div>
-    <a href='/pickmealhost'>
       <input class="btn btn-lg btn-default btn-block" type='submit'/>
-    </a>
   </form>
 </div>
-
 </body>
 {{> footer_back_home}}
 

@@ -3,26 +3,28 @@
 
 <div class="container">
   <h2>Event Info</h2>
-  <!-- {{#ids}}
-  {{#if @last}} -->
-      <h3> Event name: {{Users.0.events.eventname}}</h3>
+  {{#events}}
+  {{#if @last}}
+      <h3> Event name: {{eventname}}</h3>
       <h3> Day: {{date}}</h3>
       <h3> Time: {{time}}</h3>
-  <!-- {{/if}}
-  {{/ids}} -->
+  {{/if}}
+  {{/events}}
+  {{#hosts}}
+  
+  <h3> Hosted Food: {{name}}</h3>
 
 
-  {{#Users.0.addresses}}
-  <h3>{{#if @last}}Address: {{street}} {{city}}, {{state}} {{zip}}{{/if}}</h3>
-  {{/Users.0.addresses}}
+  {{#addresses}}
+  <h3>{{#if @last}}<a href="http://maps.apple.com/?daddr={{street}},+{{city}}+{{state}}+{{zip}}">{{street}} {{city}}, {{state}} <br />{{zip}}</a>{{/if}}</h3>
+  {{/addresses}}
 
 
 
 
-
-  <a href="#recipe" class="ui-btn ui-corner-all">Recipe</a>
-  <a href="#cancelled" class="ui-btn ui-corner-all">Cancel Event</a>
-  <div data-role="collapsible">
+  <a href="/recipe" class="btn btn-lg btn-default col-sm-6">Recipe</a>
+  <a href="/cancelled" class="btn btn-lg btn-default col-sm-6">Cancel Event</a>
+  <div role="collapsible">
     <h1>My Ingredients</h1>
     <fieldset data-role="controlgroup">
       <input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />

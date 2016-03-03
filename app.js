@@ -5,7 +5,8 @@
 var express = require('express'),
   http = require('http'),
   path = require('path'),
-  handlebars = require('express-handlebars'),
+  hbs = require('hbs'),
+  //handlebars = require('express-handlebars'),
   session = require('express-session'),
   bodyParser = require('body-parser'),
   favicon = require('serve-favicon'),
@@ -16,6 +17,7 @@ var express = require('express'),
   // LocalStrategy = require('passport-local').Strategy,
   flash = require('connect-flash'),
   methodoverride = require('method-override'),
+  localStorage = require('localStorage'),
 //routes
   index = require('./routes/index'),
   login = require('./routes/login'),
@@ -39,13 +41,17 @@ var express = require('express'),
   pickmeal = require('./routes/pickmeal'),
   recipe = require('./routes/recipe'),
   register = require('./routes/register'),
+  addaddress = require('./routes/addaddress'),
+  addHost = require('./routes/addhost'),
 //  facebook = require('./routes/log'),
   app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', handlebars());
+ app.engine('handlebars', handlebars());
+// app.engine('handlebars', hbs());
+//app.set('view engine', 'hbs');
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -82,14 +88,14 @@ app.get('/', index.view);
 app.get('/login', login.login);
 app.get('/register', register.register);
 app.get('/home/:id', home.home);
-
-app.get('/address', address.addAddress);
+app.get('/addaddress', addaddress.addAddress);
+app.get('/address/:id', address.addAddress);
 app.get('/attending', attending.attending);
 app.get('/cancelled', cancelled.cancelled);
 app.get('/cantattend', cantattend.cantattend);
 app.get('/choosemeal', choosemeal.choosemeal);
 app.get('/eventinfoguest', eventinfoguest.eventinfoguest);
-app.get('/eventinfohost/:id', eventinfohost.eventinfohost);
+app.get('/eventinfohost', eventinfohost.eventinfohost);
 app.get('/eventsetup', eventsetup.eventsetup);
 app.get('/findevent', findevent.findevent);
 app.get('/guestmain', guestmain.guestmain);
@@ -99,6 +105,7 @@ app.get('/hostaddress', hostaddress.hostaddress);
 app.get('/myeventsmain', myeventsmain.myeventsmain);
 app.get('/pickmeal', pickmeal.pickmeal);
 app.get('/recipe', recipe.recipe);
+app.get('/addhost', addHost.addHost);
 //app.get('/log', facebook.log);
 // passport config
 // var Account = require('./models/account');
