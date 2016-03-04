@@ -1,5 +1,4 @@
 var data = require("../public/json/data.json");
-var db = require('dirty')('foodids.db');
 exports.addAddress = function(req, res) {
 	var newAddress = {
 		"street": req.query.street,
