@@ -36,8 +36,8 @@ $(document).ready(function() {
 </script>
 {{else}}
 <div class="list-group">
-  {{#each hosts}}
-  <ul><a href="/address/{{id}}" class="item"><img src="{{image}}" alt="{{id}}" height="300"><h5>{{name}}</h5></a></ul>
+  {{#each hostss}}
+  <a href="/address/{{id}}" class="list-group-item"><img src="{{image}}" alt="{{id}}" height="40">{{name}}</a>
   {{/each}}
 </div>
 {{/if}}
