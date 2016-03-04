@@ -7,7 +7,7 @@
 {{#if showAlternate}}
 <div class="owl-carousel">
   {{#each hosts}}
-  <ul><a href="/address/{{id}}" class="item"><img src="{{image}}" alt="{{id}}" height="300"><h5>{{name}}</h5></a></ul>
+  <ul><a href="/address/{{id}}" class="item food"><img src="{{image}}" alt="{{id}}" height="300"><h5>{{name}}</h5></a></ul> -
   {{/each}}
 </div>
 <script>
@@ -37,10 +37,12 @@ $(document).ready(function() {
 {{else}}
 <div class="list-group">
   {{#each hosts}}
-  <ul><a href="/address/{{id}}" class="item"><img src="{{image}}" alt="{{id}}" height="300"><h5>{{name}}</h5></a></ul>
+  <ul><a href="/address/{{id}}" class="item food"><img src="{{image}}" alt="{{id}}" height="300"><h5>{{name}}</h5></a></ul>
   {{/each}}
 </div>
 {{/if}}
-  </body>
+<script src="/js/analytics.js"></script>
+{{> googleAnalytics}}
+</body>
       {{> footer_back_home}}
   </html>
