@@ -85,6 +85,7 @@ app.get('/', index.view);
 app.get('/login', login.login);
 app.get('/register', register.register);
 app.get('/home/:id', home.home);
+app.get('/home', home.home1);
 app.get('/addaddress', addaddress.addAddress);
 app.get('/address/:id', address.addAddress);
 app.get('/attending', attending.attending);

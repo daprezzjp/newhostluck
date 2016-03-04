@@ -6,3 +6,7 @@ exports.home = function(req, res){
   data["ids"].push(userID);
   res.render('home', data);
 };
+
+exports.home1 = function(req, res){
+  res.render('home', data);
+};

@@ -10,9 +10,8 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "dirty": "^1.0.0",
     "dom-storage": "^2.0.2",
-    "express": "4.x",
+    "express": "3.x",
     "express-handlebars": "*",
     "hbs": "^4.0.0",
     "localStorage": "^1.0.3"
