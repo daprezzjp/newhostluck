@@ -1,7 +1,7 @@
 /**
  * Module dependencies.
  */
-
+require('./db');
 var express = require('express'),
   http = require('http'),
   path = require('path'),
@@ -11,20 +11,17 @@ var express = require('express'),
   favicon = require('serve-favicon'),
   logger = require('morgan'),
   cookieParser = require('cookie-parser'),
-  // mongoose = require('mongoose'),
-  // passport = require('passport'),
-  // LocalStrategy = require('passport-local').Strategy,
   flash = require('connect-flash'),
   methodoverride = require('method-override'),
   localStorage = require('localStorage'),
 //routes
+  routes = require('./routes'),
   index = require('./routes/index'),
   login = require('./routes/login'),
   register = require('./routes/register'),
   user = require('./routes/user'),
   home = require('./routes/home'),
   host = require('./routes/host'),
-  address = require('./routes/address'),
   attending = require('./routes/attending'),
   cancelled = require('./routes/cancelled'),
   cantattend = require('./routes/cantattend'),
@@ -40,9 +37,7 @@ var express = require('express'),
   pickmeal = require('./routes/pickmeal'),
   recipe = require('./routes/recipe'),
   register = require('./routes/register'),
-  addaddress = require('./routes/addaddress'),
   addHost = require('./routes/addhost'),
-//  facebook = require('./routes/log'),
   app = express();
 
 // all environments
@@ -52,6 +47,7 @@ app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
+app.use( express.bodyParser());
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false
@@ -66,9 +62,7 @@ app.use(require('express-session')({
 }));
 app.use(express.session());
 app.use(app.router);
-// app.use(passport.initialize());
 app.use(flash());
-// app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
@@ -76,42 +70,31 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-// app.use(stormpath.init(app, {
-//   web: true
-// }))
-
 // Add routes here
 app.get('/', index.view);
-app.get('/login', login.login);
-app.get('/register', register.register);
+//app.get('/login', login.login);
+//app.get('/register', register.register);
 app.get('/home/:id', home.home);
 app.get('/home', home.home1);
-app.get('/addaddress', addaddress.addAddress);
-app.get('/address/:id', address.addAddress);
 app.get('/attending', attending.attending);
 app.get('/cancelled', cancelled.cancelled);
 app.get('/cantattend', cantattend.cantattend);
 app.get('/choosemeal', choosemeal.choosemeal);
 app.get('/eventinfoguest', eventinfoguest.eventinfoguest);
-app.get('/eventinfohost', eventinfohost.eventinfohost);
+app.get('/eventinfohost/:name', addHost.eventinfohost);
 app.get('/eventsetup', eventsetup.eventsetup);
 app.get('/findevent', findevent.findevent);
 app.get('/guestmain', guestmain.guestmain);
 app.get('/guestsearch', guestsearch.guestsearch);
 app.get('/host', host.host);
+app.post('/addhost', addHost.addHost);
 app.get('/hostaddress', hostaddress.hostaddress);
-app.get('/myeventsmain', myeventsmain.myeventsmain);
-app.get('/pickmeal', pickmeal.pickmeal);
+app.get('/myeventsmain', addHost.myeventsmain);
+app.get('/pickmeal/:id', pickmeal.pickmeal);
+//app.get('/pickmealadd', addHost.pickmealadd);
 app.get('/recipe', recipe.recipe);
 app.get('/addhost', addHost.addHost);
 app.get('/list', pickmeal.list);
-//app.get('/log', facebook.log);
-
-// passport config
-// var Account = require('./models/account');
-// passport.use(new LocalStrategy(Account.authenticate()));
-// passport.serializeUser(Account.serializeUser());
-// passport.deserializeUser(Account.deserializeUser());
 
 var hbs = handlebars.create({
     // Specify helpers which are only registered on this instance.
@@ -121,9 +104,6 @@ var hbs = handlebars.create({
     }
 });
 
-
-
-// mongoose.connect('mongodb://admin:admin@ds013848.mongolab.com:13848/heroku_7x340tw3');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -159,5 +139,3 @@ app.use(function(err, req, res, next) {
 http.createServer(app).listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
-
-// module.exports = app;

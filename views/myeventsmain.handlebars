@@ -2,13 +2,15 @@
 {{> navbar}}
 
 <body>
-
+<div class="container">
+  <a href="#" class="btn btn-danger">Delete an event</a>
+</div>
   <div class="container">
     <h2>Host:</h2>
-    {{#each events}}
-        <a href="/eventinfohost/{{id}}" class="btn btn-lg btn-default btn-block"> {{eventname}}</a>
+    {{#addhosts}}
+        <a href="/eventinfohost/{{_id}}" class="btn btn-lg btn-default btn-block"> {{eventname}}</a>
       <br>
-    {{/each}}
+    {{/addhosts}}
 
     <h2>Attend:</h2>
     {{#each guestevents}}

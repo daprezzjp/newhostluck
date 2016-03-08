@@ -1,6 +1,6 @@
-exports.guestmain = function(req, res){
+ var data = require("../public/json/data.json");
+
+ exports.guestmain = function(req, res){
 //  console.log(data);
-  res.render('guestmain', {
-    title: 'Guest Main'
-  });
+  res.render('guestmain', data);
  };

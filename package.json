@@ -1,6 +1,6 @@
 {
   "name": "Hostluck",
-  "author": "Randy Holeman, Chris Shmerling, Johnny Nguyen",
+  "author": "Randy Holeman, Chris Shmerling",
   "repository": {
     "type": "git",
     "url": "https://github.com/daprezzjp/Hostluck"
@@ -10,11 +10,13 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "bootstrap-list-filter": "^0.2.3",
     "dom-storage": "^2.0.2",
     "express": "3.x",
     "express-handlebars": "*",
     "hbs": "^4.0.0",
-    "localStorage": "^1.0.3"
+    "localStorage": "^1.0.3",
+    "mongoose": "^4.4.6"
   },
   "engines": {
     "node": "0.10.x"

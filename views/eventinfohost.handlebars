@@ -3,24 +3,27 @@
 
 <div class="container">
   <h2>Event Info</h2>
-  {{#events}}
+  {{#addhosts}}
   {{#if @last}}
       <h3> Event name: {{eventname}}</h3>
       <h3> Day: {{date}}</h3>
       <h3> Time: {{time}}</h3>
-  {{/if}}
-  {{/events}}
-  {{#foodids}}
-    <h3>{{id}}</h3>
-  {{/foodids}}
-  <h3> Hosted Food: {{name}}</h3>
 
+
+  <h3> Hosted Food: {{foodname}}</h3>
+  {{/if}}
+  {{/addhosts}}
 
   {{#addresses}}
   <h3>{{#if @last}}Address: {{street}} {{city}}, {{state}} <br />{{zip}}</a>{{/if}}</h3>
   {{/addresses}}
 
-  <a href="/recipe" class="btn btn-lg btn-default col-sm-6">Recipe</a>
+
+  {{#addhosts}}
+  {{#if @last}}
+  <a href="/recipe/{{id}}" class="btn btn-lg btn-default col-sm-6">Recipe</a>
+{{/if}}
+{{/addhosts}}
   <a href="/cancelled" class="btn btn-lg btn-default col-sm-6">Cancel Event</a>
   <div role="collapsible">
     <h1>My Ingredients</h1>
