@@ -1,6 +1,5 @@
 {{> html_head}}
 {{> navbar}}
-{{> experiment}}
 <div class="container">
   <h1> Pick Your Meal</h1>
   <h3> Click to choose the meal!</h3>
@@ -9,8 +8,6 @@
     <ul><a href="/addFood/{{foodname}}/{{recipe1}}/{{recipe2}}/{{recipe3}}/{{recipe4}}/{{recipe5}}" class="list-group-item"><img src="{{image}}" alt="{{id}}" height="80">    {{foodname}}</a></ul>
     {{/each}}
   </div>
-  <script src="/js/analytics.js"></script>
-  {{> googleAnalytics}}
 </body>
 <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">

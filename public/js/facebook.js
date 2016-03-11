@@ -17,10 +17,10 @@ function statusChangeCallback(response) {
 }
 
 function changeUser(response){
-var str1 = "http://newhostluck.herokuapp.com/home/";
+var str1 = "http://hostluck.herokuapp.com/home/";
 var str2 = response.id.toString();
 var res = str1.concat(str2);
 
-window.location.href=res; 
+window.location.href=res;
 
 }
