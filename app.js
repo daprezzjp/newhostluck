@@ -87,6 +87,7 @@ app.get('/addFood/:foodname/:recipe1/:recipe2/:recipe3/:recipe4/:recipe5', route
 app.get('/myeventsmain', route.myeventsmain);
 app.get('/pickmeal', pickmeal.pickmeal);
 app.get('/recipe', recipe.recipe);
+app.get('/attendsoon', myeventsmain.myeventsmain);
 
 var hbs = handlebars.create({
     // Specify helpers which are only registered on this instance.

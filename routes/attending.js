@@ -21,5 +21,6 @@ exports.attending = function(req, res) {
   "recipe5": req.params.recipe5
 	} 
 	data["attend"].push(newAttend);
+	console.log(data);
 	res.redirect('aattending');
 };

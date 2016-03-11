@@ -3,7 +3,7 @@
 
   <div class="container">
     <h1> Great! See you there</h1>
-    <h4> Here is the Event details:</h4>
+    <h4> Here are the event details:</h4>
     <br />
     {{#each attend}}
     {{#if @last}}
@@ -37,4 +37,11 @@
     <a href="/myeventsmain" class="btn btn-primary btn-lg btn-default btn-block">My Events</a>
   </div>
   </body>
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <a href='/home'><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></button></a>
+        </div>
+      </div>
+  </nav>
   </html>
