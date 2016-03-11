@@ -20,4 +20,4 @@ var Data = new Schema({
 });
 
 mongoose.model( 'Data', Data );
-mongoose.connect( 'mongodb://admin:admin@ds023428.mlab.com:23428/heroku_g7c43ppf' );
+mongoose.connect( 'mongodb://admin:admin@ds011429.mlab.com:11429/heroku_r7zhbd0s' );
