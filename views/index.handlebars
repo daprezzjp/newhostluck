@@ -4,23 +4,10 @@
 <body>
 
   <div class="container">
-    {{#unless user}}
-    <h5>Our Account System in undergoing maintenance</h5>
-    <p>Please login with Facebook in the meantime!</p>
+    <p>Login with Facebook!</p>
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
-    <h5>Existing Users</h5>
-    <button class="btn btn-lg btn-default btn-block disabled"> Login</button>
-    <br>
-    <h5>Don't have an account?</h5>
-    <!-- removed href from button. Add in later -->
-    <button class="btn btn-lg btn-default btn-block disabled"> Register</button>
-    {{/unless}}
-    {{#if user}}
-      <p> You are currently logged in as {{user.username}}</p>
-      <a href="/"><button class="btn btn-danger btn-block" href="/logout"> Logout</button></a>
-    {{/if}}
-  </div>
+</div>
 {{> facebook}}
 <script src="/js/facebook.js"></script>
 </body>

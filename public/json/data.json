@@ -1,6 +1,6 @@
 {
   "hosts": [{
-    "name": "Beef Pot Pie",
+    "foodname": "Beef Pot Pie",
     "image": "http://goo.gl/1v48ya",
     "recipe1": "Beef",
     "recipe2": "Crust",
@@ -9,7 +9,7 @@
     "recipe5": "Bowl",
     "id": 0
   }, {
-    "name": "Yogurt",
+    "foodname": "Yogurt",
     "image": "https://goo.gl/f2NsPU",
     "recipe1": "Milk",
     "recipe2": "Curd",
@@ -18,7 +18,7 @@
     "recipe5": "Granola",
     "id": 1
   }, {
-    "name": "Pop Corn",
+    "foodname": "Pop Corn",
     "image": "https://goo.gl/TRa1HR",
     "recipe1": "Corn",
     "recipe2": "Salt",
@@ -27,7 +27,7 @@
     "recipe5": "Seasoned Salt",
     "id": 2
   }, {
-    "name": "Sangria",
+    "foodname": "Sangria",
     "image": "http://goo.gl/DZjkCg",
     "recipe1": "Wine",
     "recipe2": "Strawberries",
@@ -36,7 +36,7 @@
     "recipe5": "Grapefruit",
     "id": 3
   }, {
-    "name": "Spaghetti",
+    "foodname": "Spaghetti",
     "image": "http://goo.gl/7CtUHm",
     "recipe1": "Spaghetti",
     "recipe2": "Meatball Sauce",
@@ -45,7 +45,7 @@
     "recipe5": "Chicken Broth",
     "id": 4
   }, {
-    "name": "Sushi",
+    "foodname": "Sushi",
     "image": "https://goo.gl/HK51RO",
     "recipe1": "Rice",
     "recipe2": "Rice Vinegar",
@@ -54,7 +54,7 @@
     "recipe5": "Tuna",
     "id": 5
   }, {
-    "name": "Hot Dogs",
+    "foodname": "Hot Dogs",
     "image": "http://goo.gl/bN2axu",
     "recipe1": "Hot Dog",
     "recipe2": "Hot Dog Buns",
@@ -63,7 +63,7 @@
     "recipe5": "Onions",
     "id": 6
   }, {
-    "name": "Hamburgers",
+    "foodname": "Hamburgers",
     "image": "http://goo.gl/GtuQ76",
     "recipe1": "Beef Patty",
     "recipe2": "Buns",

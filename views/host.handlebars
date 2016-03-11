@@ -2,10 +2,14 @@
 
 <div class="container">
   <h2> Host an Event!</h2>
-  <form role='form' action="/addhost" method="post">
+  <form role='form' action="/addhost" method="get">
+    {{#addhosts}}
+    {{#if @last}}
     <div class="form-group">
-      <input class="form-control" type='hidden' name="eventname" placeholder='Name Your Event' />
+      <input class="form-control" type='hidden' name="foodid" value="{{id}}" placeholder='food_id' />
     </div>
+    {{/if}}
+    {{/addhosts}}
     <div class="form-group">
       <input class="form-control" type='text' name="eventname" placeholder='Name Your Event' />
     </div>
@@ -28,7 +32,7 @@
     <div class="form-group">
       <input class="form-control" type='number' name="zip" placeholder='Zip' />
     </div>
-    <input class="btn btn-lg btn-default btn-block" type='submit' />
+    <input class="btn btn-lg btn-default btn-primary btn-block" type='submit' />
   </form>
 </div>
 </body>

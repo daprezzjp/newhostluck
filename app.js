@@ -17,7 +17,6 @@ var express = require('express'),
 //routes
   routes = require('./routes'),
   index = require('./routes/index'),
-  login = require('./routes/login'),
   register = require('./routes/register'),
   user = require('./routes/user'),
   home = require('./routes/home'),
@@ -32,12 +31,10 @@ var express = require('express'),
   findevent = require('./routes/findevent'),
   guestmain = require('./routes/guestmain'),
   guestsearch = require('./routes/guestsearch'),
-  hostaddress = require('./routes/hostaddress'),
   myeventsmain = require('./routes/myeventsmain'),
   pickmeal = require('./routes/pickmeal'),
   recipe = require('./routes/recipe'),
-  register = require('./routes/register'),
-  addHost = require('./routes/addhost'),
+  route = require('./routes/route'),
   app = express();
 
 // all environments
@@ -72,8 +69,6 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', index.view);
-//app.get('/login', login.login);
-//app.get('/register', register.register);
 app.get('/home/:id', home.home);
 app.get('/home', home.home1);
 app.get('/attending', attending.attending);
@@ -81,19 +76,17 @@ app.get('/cancelled', cancelled.cancelled);
 app.get('/cantattend', cantattend.cantattend);
 app.get('/choosemeal', choosemeal.choosemeal);
 app.get('/eventinfoguest', eventinfoguest.eventinfoguest);
-app.get('/eventinfohost/:name', addHost.eventinfohost);
+app.get('/eventinfohost', route.eventinfohost);
 app.get('/eventsetup', eventsetup.eventsetup);
 app.get('/findevent', findevent.findevent);
 app.get('/guestmain', guestmain.guestmain);
 app.get('/guestsearch', guestsearch.guestsearch);
-app.get('/host', host.host);
-app.post('/addhost', addHost.addHost);
-app.get('/hostaddress', hostaddress.hostaddress);
-app.get('/myeventsmain', addHost.myeventsmain);
-app.get('/pickmeal/:id', pickmeal.pickmeal);
-//app.get('/pickmealadd', addHost.pickmealadd);
+app.get('/host/:id', route.host);
+app.get('/addhost', route.addHost);
+app.get('/addFood/:foodname/:recipe1/:recipe2/:recipe3/:recipe4/:recipe5', route.addFood);
+app.get('/myeventsmain', route.myeventsmain);
+app.get('/pickmeal', pickmeal.pickmeal);
 app.get('/recipe', recipe.recipe);
-app.get('/addhost', addHost.addHost);
 app.get('/list', pickmeal.list);
 
 var hbs = handlebars.create({

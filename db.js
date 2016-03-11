@@ -1,17 +1,6 @@
 var mongoose = require( 'mongoose' );
 var Schema   = mongoose.Schema;
 
-var Food = new Schema({
-  foodname : String,
-  image : String,
-  recipe1 : String,
-  recipe2 : String,
-  recipe3 : String,
-  recipe4 : String,
-  recipe5 : String,
-  recipe6 : String
-})
-
 var Data = new Schema({
     eventname : String,
     date : String,
@@ -20,7 +9,14 @@ var Data = new Schema({
     city : String,
     state : String,
     zip : String,
-    food : [Food]
+    foodname : String,
+    image : String,
+    recipe1 : String,
+    recipe2 : String,
+    recipe3 : String,
+    recipe4 : String,
+    recipe5 : String,
+    recipe6 : String
 });
 
 mongoose.model( 'Data', Data );
