@@ -5,18 +5,36 @@
     <h1> Great! See you there</h1>
     <h4> Here is the Event details:</h4>
     <br />
-    {{#each events}}
+    {{#each attend}}
     {{#if @last}}
-    <h3> Event name: {{eventname}}</h3>
-    <h3> Day: {{date}}</h3>
-    <h3> Time: {{time}}</h3>
-    {{/if}}
+    <h3> Event name: {{eventname}}</h3><br>
+    <h4> Food: {{name}}</h4>
+    <h4> Day: {{date}}</h4>
+    <h4> Time: {{time}}</h4>
+    <h4>Address: {{street}} {{city}}, <br>{{state}} {{zip}}</h4>
+
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse2" class="btn btn-lg btn-default btn-block"> Ingredients</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <ul class="list-group">
+            <li class="list-group-item">{{recipe1}}</li>
+            <li class="list-group-item">{{recipe2}}</li>
+            <li class="list-group-item">{{recipe3}}</li>
+            <li class="list-group-item">{{recipe4}}</li>
+            <li class="list-group-item">{{recipe5}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+{{/if}}
     {{/each}}
-    {{#each addresses}}
-    <h3>{{#if @last}}Address: {{street}} {{city}}, {{state}} {{zip}}{{/if}}</h3>
-    {{/each}}
-    <a href="/myeventsmain" class="btn btn-lg btn-default btn-block">My Events</a>
+    <a href="/myeventsmain" class="btn btn-primary btn-lg btn-default btn-block">My Events</a>
   </div>
   </body>
-      <!-- {{> footer_back_home}} -->
   </html>

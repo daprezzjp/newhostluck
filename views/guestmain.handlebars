@@ -4,33 +4,24 @@
 
   <div class="container">
     <h2>Choose Event</h2>
-    <form role="form">
-    	<div class="form-group">
     		<input id="searchinput" class="form-control" type="search" placeholder="Search... " />
-    	</div>
     	<div id="searchlist" class="list-group">
         {{#guests}}
-          <a href="/attending" class="list-group-item">Meal1</a>
-          <a href="/attending" class="list-group-item">Meal2</a>
-          <a href="/attending" class="list-group-item">Meal3</a>
-          <a href="/attending" class="list-group-item">Meal4</a>
-        {{/guests}}
+          <a href="/attending/{{id}}/{{eventname}}/{{name}}/{{date}}/{{time}}/{{street}}/{{city}}/{{state}}/{{zip}}/{{recipe1}}/{{recipe2}}/{{recipe3}}/{{recipe4}}/{{recipe5}}" class="list-group-item"><span>{{eventname}}, {{name}}</span><h6>{{street}} {{city}},{{zip}}</h6></a>
+          {{/guests}}
     	</div>
-    </form>
     <script>
     	$('#searchlist').btsListFilter('#searchinput', {itemChild: 'span'});
     </script>
-    <!-- {{#each events}}
-      <li>
-        <a href="/login">
-          <button class="btn btn-lg btn-default btn-block"> {{guests.name}}</button>
-        </a>
-      </li>
-      <br>
-    {{/each}} -->
   </div>
 
 </body>
-{{> footer_back_home}}
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <a href='/home'><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></button></a>
+      </div>
+    </div>
+</nav>
 
 </html>

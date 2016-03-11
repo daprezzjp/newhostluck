@@ -18,7 +18,6 @@ var express = require('express'),
   routes = require('./routes'),
   index = require('./routes/index'),
   register = require('./routes/register'),
-  user = require('./routes/user'),
   home = require('./routes/home'),
   host = require('./routes/host'),
   attending = require('./routes/attending'),
@@ -71,7 +70,8 @@ if ('development' == app.get('env')) {
 app.get('/', index.view);
 app.get('/home/:id', home.home);
 app.get('/home', home.home1);
-app.get('/attending', attending.attending);
+app.get('/attending/:id/:eventname/:name/:date/:time/:street/:city/:state/:zip/:recipe1/:recipe2/:recipe3/:recipe4/:recipe5', attending.attending);
+app.get('/aattending', attending.aattending);
 app.get('/cancelled', cancelled.cancelled);
 app.get('/cantattend', cantattend.cantattend);
 app.get('/choosemeal', choosemeal.choosemeal);

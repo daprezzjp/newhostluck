@@ -7,7 +7,6 @@ exports.pickmeal = function(req, res){
     "mongoid": req.params.id
   } 
   meal["hosts"].push(mongoID);
-  console.log(meal);
   res.render('pickmeal', meal);
 };
 

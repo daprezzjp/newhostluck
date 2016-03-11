@@ -72,132 +72,138 @@
     "recipe5": "Ketchup",
     "id": 7
   }],
-  "hostss": [{
-    "name": "Beef Pot Pie",
+
+  "guests": [{
+    "eventname": "Herb's Pot Pie Party",
+    "name": "Chicken Pot Pie",
     "image": "http://goo.gl/1v48ya",
-    "recipe1": "Beef",
+    "id": 0,
+    "date": "16-10-27",
+    "time": "15:00",
+    "street": "8032 Park Avenue",
+    "city": "Austin",
+    "state": "California",
+    "zip": "09123",
+    "recipe1": "Chicken",
     "recipe2": "Crust",
     "recipe3": "Cream Sauce",
     "recipe4": "Mushrooms",
-    "recipe5": "Bowl",
-    "id": 0
+    "recipe5": "Bowl"
   }, {
+    "eventname": "Yogurt's for Everyone!",
     "name": "Yogurt",
     "image": "https://goo.gl/f2NsPU",
+    "id": 1,
+    "date": "16-10-13",
+    "time": "18:00",
+    "street": "4544 Wood Street",
+    "city": "Corpus Christi",
+    "state": "California",
+    "zip": "92058",
     "recipe1": "Milk",
     "recipe2": "Curd",
     "recipe3": "Strawberries",
     "recipe4": "Blueberries",
-    "recipe5": "Granola",
-    "id": 1
+    "recipe5": "Granola"
   }, {
+    "eventname": "Star Wars Night",
     "name": "Pop Corn",
     "image": "https://goo.gl/TRa1HR",
+    "id": 2,
+    "date": "16-10-31",
+    "time": "03:00",
+    "street": "813 Jackson Avenue",
+    "city": "Billings",
+    "state": "California",
+    "zip": "65392",
     "recipe1": "Corn",
     "recipe2": "Salt",
     "recipe3": "Caramel",
     "recipe4": "Butter",
-    "recipe5": "Seasoned Salt",
-    "id": 2
+    "recipe5": "Seasoned Salt"
   }, {
+    "eventname": "Let's get Drunk while we mix",
     "name": "Sangria",
     "image": "http://goo.gl/DZjkCg",
+    "id": 3,
+    "date": "16-10-22",
+    "time": "09:00",
+    "street": "9784 Magnolia Drive",
+    "city": "Kearny",
+    "state": "California",
+    "zip": "92126",
     "recipe1": "Wine",
     "recipe2": "Strawberries",
     "recipe3": "Oranges",
     "recipe4": "Blueberries",
-    "recipe5": "Grapefruit",
-    "id": 3
+    "recipe5": "Grapefruit"
   }, {
+    "eventname": "Mario's Spaghetti Get Together",
     "name": "Spaghetti",
     "image": "http://goo.gl/7CtUHm",
+    "id": 4,
+    "date": "16-10-11",
+    "time": "06:00",
+    "street": "9784 Julius Drive",
+    "city": "Megadonia",
+    "state": "California",
+    "zip": "96789",
     "recipe1": "Spaghetti",
     "recipe2": "Meatball Sauce",
     "recipe3": "Meatballs",
     "recipe4": "Olive Oil",
-    "recipe5": "Chicken Broth",
-    "id": 4
+    "recipe5": "Chicken Broth"
   }, {
+    "eventname": "Sean's Temaki Sushi",
     "name": "Sushi",
     "image": "https://goo.gl/HK51RO",
+    "id": 5,
+    "date": "16-11-26",
+    "time": "15:00",
+    "street": "9784 Singer Ave",
+    "city": "Kearny Mesa",
+    "state": "California",
+    "zip": "92126",
     "recipe1": "Rice",
     "recipe2": "Rice Vinegar",
     "recipe3": "Cucumbers",
     "recipe4": "Salmon",
-    "recipe5": "Tuna",
-    "id": 5
+    "recipe5": "Tuna"
   }, {
+    "eventname": "John's Dog Party",
     "name": "Hot Dogs",
     "image": "http://goo.gl/bN2axu",
+    "id": 6,
+    "date": "16-10-24",
+    "time": "16:00",
+    "street": "9784 Mongod Park",
+    "city": "San Diego",
+    "state": "California",
+    "zip": "91580",
     "recipe1": "Hot Dog",
     "recipe2": "Hot Dog Buns",
     "recipe3": "Mustard",
     "recipe4": "Ketchup",
-    "recipe5": "Onions",
-    "id": 6
+    "recipe5": "Onions"
   }, {
-  }],
-
-  "guests": [{
-    "name": "Chicken Pot Pie",
-    "image": "http://goo.gl/1v48ya",
-    "id": 0,
-    "zip": "92126"
-  }, {
-    "name": "Yogurt",
-    "image": "https://goo.gl/f2NsPU",
-    "id": 1,
-    "zip": "92058"
-  }, {
-    "name": "Pop Corn",
-    "image": "https://goo.gl/TRa1HR",
-    "id": 2,
-    "zip": "96520"
-  }, {
-    "name": "Sangria",
-    "image": "http://goo.gl/DZjkCg",
-    "id": 3,
-    "zip": "91234"
-  }, {
-    "name": "Spaghetti",
-    "image": "http://goo.gl/7CtUHm",
-    "id": 4,
-    "zip": "96789"
-  }, {
-    "name": "Sushi",
-    "image": "https://goo.gl/HK51RO",
-    "id": 5,
-    "zip": "92126"
-  }, {
-    "name": "Hot Dogs",
-    "image": "http://goo.gl/bN2axu",
-    "id": 6,
-    "zip": "91580"
-  }, {
+    "eventname": "Jim's Hamburger Party",
     "name": "Hamburgers",
     "image": "http://goo.gl/GtuQ76",
     "id": 7,
-    "zip": "51324"
+    "date": "16-10-16",
+    "time": "12:00",
+    "street": "9784 Jobin Terrace",
+    "city": "Chula Vista",
+    "state": "California",
+    "zip": "51324",
+    "recipe1": "Beef Patty",
+    "recipe2": "Buns",
+    "recipe3": "Mustard",
+    "recipe4": "Onions",
+    "recipe5": "Ketchup"
   }],
-  "addresses": [{
-    "street": "9784 Magnolia Drive",
-    "city": "Kearny",
-    "zip": "92126"
-  }, {
-    "street": "4544 Wood Street",
-    "city": "Corpus Christi",
-    "zip": "92058"
-  }, {
-    "street": "8032 Park Avenue",
-    "city": "Austin",
-    "zip": "09123"
-  }, {
-    "street": "813 Jackson Avenue",
-    "city": "Billings",
-    "zip": "65392"
-  }],
-
   "events": [],
   "ids": [],
-  "foodids": []
+  "foodids": [],
+  "attend": []
 }

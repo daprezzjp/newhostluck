@@ -2,7 +2,6 @@ var mongoose = require( 'mongoose' );
 var addHost = mongoose.model( 'Data' );
 
 exports.addHost = function(req, res){
-  console.log(req.query.foodid);
   addHost.findByIdAndUpdate(
     req.query.foodid, {
     $push: {

@@ -6,6 +6,5 @@ exports.host = function(req, res){
     "time": req.query.time
   } 
   data["events"].push(newHost);
-  console.log(data);
   res.render('host', data);
 };
