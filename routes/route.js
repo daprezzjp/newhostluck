@@ -19,25 +19,6 @@ exports.addHost = function(req, res){
   });
 };
 
-// exports.host = function(req, res){
-//   console.log(req.params.id);
-//   addHost.findByIdAndUpdate(
-//     req.params.id, {
-//     $push: {
-//       eventname : req.body.eventname,
-//       date : req.body.date,
-//       time : req.body.time,
-//       street : req.body.street,
-//       city : req.body.city,
-//       state : req.body.state,
-//       zip : req.body.zip
-//     }
-//   }, {safe: true, upsert: true}, function(err, addhost) {
-//     console.log(addhost.eventname);
-//     res.render('/host/' + addhost._id);
-//   });
-// };
-
 exports.addFood = function(req, res){
   new addHost({
   foodname : req.params.foodname,

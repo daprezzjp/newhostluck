@@ -1,49 +1,16 @@
 {{> html_head}}
 {{> navbar}}
 {{> experiment}}
-  <div class="container">
-    <h1> Pick Your Meal</h1>
-    <h3> Click to choose the meal!</h3>
-{{#if showAlternate}}
-<div class="owl-carousel">
-  {{#each hosts}}
-  <ul><a href="/addFood/{{foodname}}/{{recipe1}}/{{recipe2}}/{{recipe3}}/{{recipe4}}/{{recipe5}}"
-    id="{{id}}" class="item food"><img src="{{image}}" alt="{{id}}" height="300"><h5>{{name}}</h5></a></ul> -
-  {{/each}}
-</div>
-<script>
-$(document).ready(function() {
-  $('.owl-carousel').owlCarousel({
-  loop:true,
-  margin:0,
-  responsiveClass:true,
-  responsive:{
-      0:{
-          items:1,
-          nav: false
-      },
-      600:{
-          items:3,
-          nav:false
-      },
-      1000:{
-          items:5,
-          nav:true,
-          loop:false
-      }
-  }
-});
-});
-</script>
-{{else}}
-<div class="list-group">
-  {{#each hosts}}
-  <ul><a href="/eventinfohost/{{name}}" class="item food"><img src="{{image}}" alt="{{id}}" height="300"><h5>{{name}}</h5></a></ul>
-  {{/each}}
-</div>
-{{/if}}
-<script src="/js/analytics.js"></script>
-{{> googleAnalytics}}
+<div class="container">
+  <h1> Pick Your Meal</h1>
+  <h3> Click to choose the meal!</h3>
+  <div class="list-group">
+    {{#each hosts}}
+    <ul><a href="/addFood/{{foodname}}/{{recipe1}}/{{recipe2}}/{{recipe3}}/{{recipe4}}/{{recipe5}}" class="list-group-item"><img src="{{image}}" alt="{{id}}" height="80">    {{foodname}}</a></ul>
+    {{/each}}
+  </div>
+  <script src="/js/analytics.js"></script>
+  {{> googleAnalytics}}
 </body>
-      {{> footer_back_home}}
-  </html>
+{{> footer_back_home}}
+</html>

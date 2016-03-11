@@ -5,37 +5,37 @@
   <h2>Event Info</h2>
   {{#addhosts}}
   {{#if @last}}
-      <h3> Event name: {{eventname}}</h3>
-      <h3> Day: {{date}}</h3>
-      <h3> Time: {{time}}</h3>
+  <h3> Event name: {{eventname}}</h3>
+  <h3> Day: {{date}}</h3>
+  <h3> Time: {{time}}</h3>
 
 
   <h3> Hosted Food: {{foodname}}</h3>
+
+  <h3>Address: {{street}} {{city}}, {{state}} <br />{{zip}}</h3>
+
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse1" class="btn btn-lg btn-default btn-block"> Ingredients</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <ul class="list-group">
+          <li class="list-group-item">{{recipe1}}</li>
+          <li class="list-group-item">{{recipe2}}</li>
+          <li class="list-group-item">{{recipe3}}</li>
+          <li class="list-group-item">{{recipe4}}</li>
+          <li class="list-group-item">{{recipe5}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
   {{/if}}
   {{/addhosts}}
-
-  {{#addresses}}
-  <h3>{{#if @last}}Address: {{street}} {{city}}, {{state}} <br />{{zip}}</a>{{/if}}</h3>
-  {{/addresses}}
-
-
-  {{#addhosts}}
-  {{#if @last}}
-  <a href="/recipe/{{id}}" class="btn btn-lg btn-default col-sm-6">Recipe</a>
-{{/if}}
-{{/addhosts}}
-  <a href="/cancelled" class="btn btn-lg btn-default col-sm-6">Cancel Event</a>
-  <div role="collapsible">
-    <h1>My Ingredients</h1>
-    <fieldset data-role="controlgroup">
-      <input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />
-      <label for="checkbox-1">Onions</label>
-      <input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
-      <label for="checkbox-2">Beans</label>
-      <input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom" />
-      <label for="checkbox-3">Corn On The Cob</label>
-    </fieldset>
-  </div>
+  <a href="/cancelled" class="btn btn-lg btn-danger btn-default col-sm-6">Cancel Event</a>
 </div>
 
 </body>

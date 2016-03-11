@@ -6,11 +6,14 @@
     <h2>Choose Event</h2>
     <form role="form">
     	<div class="form-group">
-    		<input id="searchinput" class="form-control" type="search" placeholder="Search..." />
+    		<input id="searchinput" class="form-control" type="search" placeholder="Search... " />
     	</div>
     	<div id="searchlist" class="list-group">
         {{#guests}}
-          <a href="/attending" class="list-group-item"> {{eventname}} Meal: {{name}} <br /> {{zip}}</a>
+          <a href="/attending" class="list-group-item">Meal1</a>
+          <a href="/attending" class="list-group-item">Meal2</a>
+          <a href="/attending" class="list-group-item">Meal3</a>
+          <a href="/attending" class="list-group-item">Meal4</a>
         {{/guests}}
     	</div>
     </form>
